@@ -1,5 +1,8 @@
 import React from 'react';
 import './Home.css'; // Import the external CSS file
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import LoginPage from './LoginPage';
+import SignUpPage from './SignUpPage';
 
 function Home() {
   return (
@@ -45,5 +48,66 @@ function Home() {
     </>
   );
 }
+
+
+const Home = () => {
+  const [isLoggedIn, setLoggedIn] = useState(false);
+  
+  const handleLogin = () => {
+    setLoggedIn(true);
+  };
+  
+  const handleLogout = () => {
+    setLoggedIn(false);
+  };
+  
+  return (
+    <Router>
+      <div>
+        <h1>Culinary Masters</h1>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            {!isLoggedIn && (
+              <>
+                <li>
+                  <Link to="/signup">Sign Up</Link>
+                </li>
+                <li>
+                  <Link to="/login">Log In</Link>
+                </li>
+              </>
+            )}
+            {isLoggedIn && (
+              <li>
+                <button onClick={handleLogout}>Log Out</button>
+              </li>
+            )}
+          </ul>
+        </nav>
+
+        <hr />
+
+        <Route
+          exact
+          path="/"
+          render={() => (isLoggedIn ? <h2>Home Content Goes Here</h2> : null)}
+          />
+        <Route
+          path="/signup"
+          render={() => (!isLoggedIn ? <SignUpPage /> : null)}
+          />
+        <Route
+          path="/login"
+          render={() => (!isLoggedIn ? <LoginPage onLogin={handleLogin} /> : null)}
+          />
+      </div>
+    </Router>
+  );
+};
+
+
 
 export default Home;
