@@ -1,10 +1,11 @@
-// import './App.css'
+import './App.css'
 import Home from './home.jsx'
 
 function App() {
   return (
     <>
       <Home />
+      
       </>
   )
 }
