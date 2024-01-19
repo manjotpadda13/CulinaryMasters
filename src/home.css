@@ -50,10 +50,25 @@ h1 {
   .dropdown:hover .dropbtn {background-color: #3e8e41;}
 
 .row-one{
-    height: 180px;
+    height: 300px;
     width: 80%;
     background-color: #4d5bdb;
     display: inline-flex;
+    justify-content: space-evenly;
+}
+.row-two{
+    height: 300px;
+    width: 80%;
+    background-color: #6fdae2;
+    display: inline-flex;
+    justify-content: space-evenly;
+}
+.row-three{
+    height: 300px;
+    width: 80%;
+    background-color: #db4880;
+    display: inline-flex;
+    justify-content: space-evenly;
 }
 .card {
     /* Add shadows to create the "card" effect */

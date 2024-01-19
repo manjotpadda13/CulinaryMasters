@@ -16,6 +16,7 @@ function Home() {
             <a href="#">Appetizers</a>
           </div>
         </div>
+        </div>
         <div className='row-one'>
           <h3>Healthy</h3>
           <div className='card'>
@@ -26,8 +27,6 @@ function Home() {
             </div>
           </div>
           {/* card 2 */}
-          <div className='row-one'>
-          <h3>Healthy</h3>
           <div className='card'>
             <img src="https://picsum.photos/200" alt="Dish" style={{ width: '100%' }} />
             <div className="container">
@@ -35,13 +34,98 @@ function Home() {
               <p>Ingredients:</p>
             </div>
           </div>
-        </div>
         {/* card 3 */}
-        
+        <div className='card'>
+            <img src="https://picsum.photos/200" alt="Dish" style={{ width: '100%' }} />
+            <div className="container">
+              <h4><b>Dish One</b></h4>
+              <p>Ingredients:</p>
+            </div>
+          </div>
+        {/* card 4 */}
+        <div className='card'>
+            <img src="https://picsum.photos/200" alt="Dish" style={{ width: '100%' }} />
+            <div className="container">
+              <h4><b>Dish One</b></h4>
+              <p>Ingredients:</p>
+            </div>
+          </div>
+
+        </div>
+          {/* row two */}
+          <div className='row-two'>
+          <h3>Desserts</h3>
+          <div className='card'>
+            <img src="https://picsum.photos/200" alt="Dish" style={{ width: '100%' }} />
+            <div className="container">
+              <h4><b>Dish One</b></h4>
+              <p>Ingredients:</p>
+            </div>
+          </div>
+          {/* card 2 */}
+          <div className='card'>
+            <img src="https://picsum.photos/200" alt="Dish" style={{ width: '100%' }} />
+            <div className="container">
+              <h4><b>Dish One</b></h4>
+              <p>Ingredients:</p>
+            </div>
+          </div>
+        {/* card 3 */}
+        <div className='card'>
+            <img src="https://picsum.photos/200" alt="Dish" style={{ width: '100%' }} />
+            <div className="container">
+              <h4><b>Dish One</b></h4>
+              <p>Ingredients:</p>
+            </div>
+          </div>
+        {/* card 4 */}
+        <div className='card'>
+            <img src="https://picsum.photos/200" alt="Dish" style={{ width: '100%' }} />
+            <div className="container">
+              <h4><b>Dish One</b></h4>
+              <p>Ingredients:</p>
+            </div>
+          </div>
+
+        </div>
+        {/* row three */}
+        <div className='row-three'>
+          <h3>Appetizers</h3>
+          <div className='card'>
+            <img src="https://picsum.photos/200" alt="Dish" style={{ width: '100%' }} />
+            <div className="container">
+              <h4><b>Dish One</b></h4>
+              <p>Ingredients:</p>
+            </div>
+          </div>
+          {/* card 2 */}
+          <div className='card'>
+            <img src="https://picsum.photos/200" alt="Dish" style={{ width: '100%' }} />
+            <div className="container">
+              <h4><b>Dish One</b></h4>
+              <p>Ingredients:</p>
+            </div>
+          </div>
+        {/* card 3 */}
+        <div className='card'>
+            <img src="https://picsum.photos/200" alt="Dish" style={{ width: '100%' }} />
+            <div className="container">
+              <h4><b>Dish One</b></h4>
+              <p>Ingredients:</p>
+            </div>
+          </div>
+        {/* card 4 */}
+        <div className='card'>
+            <img src="https://picsum.photos/200" alt="Dish" style={{ width: '100%' }} />
+            <div className="container">
+              <h4><b>Dish One</b></h4>
+              <p>Ingredients:</p>
+            </div>
+          </div>
+
         </div>
         
-        
-      </div>
+      
     </>
   );
 }
