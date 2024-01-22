@@ -132,7 +132,7 @@ function Home() {
 
 export default Home;
 
-const Home = () => {
+const userLogin = () => {
     const [isLoggedIn, setLoggedIn] = useState(false);
     
     const handleLogin = () => {
