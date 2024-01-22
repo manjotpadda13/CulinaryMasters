@@ -6,7 +6,7 @@ function Home() {
     <>
       <div className='header-sec'>
         <h1>Culinary Masters</h1>
-        <input type="text" placeholder="Search.." />
+        <input className='srch' type="text" placeholder="Search Dish" />
         <button className='srch-btn'>search</button>
         <div className="dropdown">
           <button className="dropbtn">Dropdown</button>
@@ -132,7 +132,7 @@ function Home() {
 
 export default Home;
 
-const Home = () => {
+const userLogin = () => {
     const [isLoggedIn, setLoggedIn] = useState(false);
     
     const handleLogin = () => {
