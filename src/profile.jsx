@@ -25,7 +25,7 @@ const profilePage = () => {
 rows="4" cols="50">
   Enter Text Here ...
 </textarea>
-<input type="submit" value="sumbit"></input>
+<input type="submit" value="submit"></input>
 
 <div className='card'>
             <img src="" alt="recipe" />
