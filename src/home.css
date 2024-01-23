@@ -3,9 +3,21 @@ h1 {
     background-color: rgb(213, 230, 173); /* Change this to your desired background color */
     /* Add more styles if needed */
   }
+  .srch{
+    height: 25px;
+    width: 180px;
+  }
   .srch-btn {
     height: 30px;
     width: 60px;
+    background-color: #db4880;
+    color: white;
+    border: none;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .srch-btn:hover {
+    background-color: #a83d6e; /* Change the background color on hover */
   }
 
   .dropbtn {
@@ -55,6 +67,7 @@ h1 {
     background-color: #4d5bdb;
     display: inline-flex;
     justify-content: space-evenly;
+    padding: 15px;
 }
 .row-two{
     height: 300px;
@@ -62,6 +75,7 @@ h1 {
     background-color: #6fdae2;
     display: inline-flex;
     justify-content: space-evenly;
+    padding: 15px;
 }
 .row-three{
     height: 300px;
@@ -69,11 +83,13 @@ h1 {
     background-color: #db4880;
     display: inline-flex;
     justify-content: space-evenly;
+    padding: 15px;
 }
 .card {
     /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
+    background-color: #f1f1f1;
   }
   
   /* On mouse-over, add a deeper shadow */
