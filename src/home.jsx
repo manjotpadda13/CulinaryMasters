@@ -1,7 +1,9 @@
 import React from 'react';
 import './Home.css'; // Import the external CSS file
+import Axios from "axios"
 
 function Home() {
+  
   return (
     <>
       <div className='header-sec'>
@@ -11,10 +13,14 @@ function Home() {
         <div className="dropdown">
           <button className="dropbtn">Dropdown</button>
           <div className="dropdown-content">
+            <a href="#">Beef</a>
+            <a href="#">Chicken</a>
             <a href="#">Vegan</a>
-            <a href="#">Desserts</a>
-            <a href="#">Appetizers</a>
+            <a href="#">Dessert</a>
           </div>
+
+        <a href=''>Profile</a>
+
         </div>
         </div>
         <div className='row-one'>

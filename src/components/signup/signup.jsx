@@ -1,5 +1,6 @@
 // SignUpPage.jsx
 import React from 'react';
+// import './components/signup/signup.css';
 
 const SignUpPage = () => {
   return (
