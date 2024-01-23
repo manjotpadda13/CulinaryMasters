@@ -6,7 +6,7 @@ function Home() {
     <>
       <div className='header-sec'>
         <h1>Culinary Masters</h1>
-        <input type="text" placeholder="Search.." />
+        <input className='srch' type="text" placeholder="Search Dish" />
         <button className='srch-btn'>search</button>
         <div className="dropdown">
           <button className="dropbtn">Dropdown</button>
