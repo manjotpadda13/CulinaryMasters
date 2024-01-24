@@ -1,9 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Home.css'; // Import the external CSS file
 import Axios from "axios"
 
+// Axios.get("https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata").then((res) => {
+//   console.log(res.data);
+// });
+
 function Home() {
   
+  useEffect(() => {
+    Axios.get("https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata")
+    .then((res) => {
+      console.log(res.data);
+    })
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+    });
+  }, []); // Empty dependency array means this effect runs once after the initial render
+
   return (
     <>
       <div className='header-sec'>
