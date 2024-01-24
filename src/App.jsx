@@ -8,10 +8,10 @@ import SignUpPage from './components/signup/signup.jsx'
 function App() {
   return (
     <>
-      <Home />
+      {/* <Home /> */}
       {/* <SignUpPage /> */}
       {/* <LoginPage /> */}
-      {/* <Profile /> */}
+      <Profile />
 
       </>
   )

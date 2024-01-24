@@ -1,16 +1,61 @@
-h1 {
-    background-color: rgb(213, 230, 173); /* Change this to your desired background color */
+
+   /* Change this to your desired background color */
     /* Add more styles if needed */
+  
+
+
+  h2{
+    color: rgb(107, 127, 69);
+   text-align:center;
+   margin-left: 25px;
+  
+  
   }
 
-  .profile-pic{
-    background-color: salmon;
+  h3{
+    color: black;
+    text-align: center;
+    margin-right: 150px;
+  }
+
+  a:link{
+  padding-left: 900px;
+  color: #f1f1f1;
+  }
+
+  a:hover{
+    color: #497c4f;
+  }
+
+  .logo-pic{
+  
     display: flex;
-    padding-left: 25px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 30px;
+  }
+
+  .header{
+   color: #497c4f;
+    margin-left:150px;
+    font-size: 50px;
+
+   
+  }
+
+
+
+  .profile-pic{
+  
+    display: flex;
+    padding-left: 50px;
+    padding-right: 25px;
   }
 
 .user{
     padding-left: 10px;
+
+
 }
 .profile-header{
     padding-bottom: 15px;
@@ -18,7 +63,7 @@ h1 {
 .create-btn{
     height: 30px;
     width: 300px;
-    background-color: #db4880;
+    background-color:#497c4f;
     color: white;
     border: none;
     margin-left: 10px;
@@ -27,7 +72,7 @@ h1 {
 .recipie-div{
     height: 300px;
     width: 80%;
-    background-color: #4d5bdb;
+    background-color: rgb(240, 234, 234);
     display: flex;
     justify-content: start;
     padding: 15px;
@@ -47,17 +92,32 @@ justify-content: flex-end;
 
 .card {
     /* Add shadows to create the "card" effect */
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(230, 221, 221, 0.2);
     transition: 0.3s;
     background-color: #f1f1f1;
   }
   
   /* On mouse-over, add a deeper shadow */
   .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: rgb(107, 127, 69);
   }
   
   /* Add some padding inside the card container */
   .container {
     padding: 2px 16px;
   }
+
+  
+input{
+  background-color: #497c4f;
+  margin-right: 20px;
+ 
+ 
+}
+
+textarea{
+  background-color: white;
+  color: black;
+  border-color: #497c4f;
+}
+
