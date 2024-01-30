@@ -25,7 +25,8 @@ function Home() {
          
         <Header />
         <input className='srch' type="text" placeholder="Search Dish" />
-        <button className='srch-btn'>search</button>
+        
+        <input type="srch-btn" value="Search"></input>
         <div className="dropdown">
           <button className="dropbtn">Dropdown</button>
           <div className="dropdown-content">

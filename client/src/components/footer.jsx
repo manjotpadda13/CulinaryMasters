@@ -5,7 +5,10 @@ function Footer() {
   return (
     <>
 <div class ="footer">
-Culinary Masters footer 
+Copyright (c) 2024 Culinary masters 
+<h1>
+
+</h1>
 </div>
 
       
