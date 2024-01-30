@@ -1,10 +1,15 @@
 // SignUpPage.jsx
 import React from 'react';
+import Header from "../../components/header";
+import Footer from "../../components/footer";
 // import './components/signup/signup.css';
 
 const SignUpPage = () => {
-  return (
+  return ( 
+
+  
     <div>
+      <Header />
       <h1>Sign Up here</h1>
       <form className="signup-form" action="/auth/signup" method="POST">
         <label className="signup-label" htmlFor="signup-email">Email:</label>
@@ -21,6 +26,8 @@ const SignUpPage = () => {
       <a href="/">
         <button>Main page</button>
       </a>
+
+      <Footer />
     </div>
   );
 };

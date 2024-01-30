@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import './Home.css'; // Import the external CSS file
 import Axios from "axios"
+import Header from "../../components/header";
+import Footer from "../../components/footer";
 
 // Axios.get("https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata").then((res) => {
 //   console.log(res.data);
@@ -20,8 +22,8 @@ function Home() {
 
   return (
     <>
-      <div className='header-sec'>
-        <h1>Culinary Masters</h1>
+         
+        <Header />
         <input className='srch' type="text" placeholder="Search Dish" />
         <button className='srch-btn'>search</button>
         <div className="dropdown">
@@ -33,9 +35,9 @@ function Home() {
             <a href="#">Dessert</a>
           </div>
 
-        <a href=''>Profile</a>
+          <a href=''>Profile</a>
 
-        </div>
+        
         </div>
         <div className='row-one'>
           <h3>Healthy</h3>
@@ -145,7 +147,7 @@ function Home() {
 
         </div>
         
-      
+      <Footer />
     </>
   );
 }

@@ -1,23 +1,21 @@
 import React from 'react';
 import './Profile.css'; // Import the external CSS file
+import Header from "../../components/header";
+import Footer from "../../components/footer";
 
 function Profile() {
   return (
     <>
-      <div className='profile-header'>
-      <a href='home'>Home</a>
-      <div className='logo-pic'>
-        <img src="https://picsum.photos/200" alt="Logo" style={{ width: '10%' }} />
-        <h1 className='header'>Culinary Masters</h1>
-      </div>
 
-
+<Header />
       
-        <div className='profile-pic'>
+      <a href='home'>Home</a>
+     
+  <div className='profile-pic'>
         <img src="https://picsum.photos/200" alt="Dish" style={{ width: '10%' }} />
         <h2 className='user'>username</h2>
       </div>
-        <div></div>
+        <div>
 
 
         <h3 className='add'>Add your recipe here </h3>
@@ -41,6 +39,7 @@ rows="4" cols="50">
                 <button className='del-btn'>Delete</button>
             </div>
           </div>
+          <Footer />
 
          
     </>
