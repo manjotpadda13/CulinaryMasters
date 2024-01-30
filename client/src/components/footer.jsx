@@ -5,7 +5,7 @@ function Footer() {
   return (
     <>
 <div className ="footer">
- copyright (c) Culinary Masters
+Culinary Masters footer 
 </div>
 
       
