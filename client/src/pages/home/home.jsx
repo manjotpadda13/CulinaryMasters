@@ -1,31 +1,47 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Home.css'; // Import the external CSS file
-import Axios from "axios"
+import Axios from "axios";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
 
-// Axios.get("https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata").then((res) => {
-//   console.log(res.data);
-// });
-
 function Home() {
-  
-  useEffect(() => {
-    Axios.get("https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata")
-    .then((res) => {
-      console.log(res.data);
-    })
-    .catch((error) => {
-      console.error("Error fetching data:", error);
-    });
-  }, []); // Empty dependency array means this effect runs once after the initial render
+  // State to manage the value of the search input
+  const [searchInput, setSearchInput] = useState('');
+
+  // Function to handle changes in the search input
+  const handleInputChange = (e) => {
+    // Update the searchInput state with the new value from the input field
+    setSearchInput(e.target.value);
+  };
+
+  // Function to handle the click event of the search button
+  const handleSearchClick = () => {
+    // Check if the search input is not empty before making the API request
+    if (searchInput.trim() === '') {
+      // If the search input is empty, do nothing
+      return;
+    }
+
+    // Axios GET request to fetch data from the meal database API
+    Axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInput}`)
+      .then((res) => {
+        // Log the API data to the console
+        console.log(res.data);
+      })
+      .catch((error) => {
+        // Log an error message if there's an issue fetching data
+        console.error("Error fetching data:", error);
+      });
+  };
 
   return (
     <>
          
         <Header />
-        <input className='srch' type="text" placeholder="Search Dish" />
-        <button className='srch-btn'>search</button>
+        {/* Input field for searching dishes */}
+        <input className='srch' type="text" placeholder="Search Dish" value={searchInput} onChange={handleInputChange} />
+        {/* Search button with click event handler */}
+        <button className='srch-btn' onClick={handleSearchClick}>search</button>
         <div className="dropdown">
           <button className="dropbtn">Dropdown</button>
           <div className="dropdown-content">
