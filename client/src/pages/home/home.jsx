@@ -8,6 +8,14 @@ function Home() {
   // State to manage the value of the search input
   const [searchInput, setSearchInput] = useState('');
   const [apiData, setApiData] = useState(null);// State variable to store API data
+  const [dishOneName, setdishOneName] = useState('')
+  const [dishOneImage, setdishOneImage] = useState('')
+
+
+  const [dishTwoName, setdishTwoName] = useState('')
+  const [dishThreeName, setdishThreeName] = useState('')
+  const [dishFourName, setdishFourName] = useState('')
+
   const ApiKey = '1'
 
   // Function to handle changes in the search input
@@ -30,6 +38,16 @@ function Home() {
         // Log the API data to the console
         console.log(res.data);
         console.log(res.data.meals);
+
+        // Update dishOneName using setDishOneName
+        setdishOneName(res.data.meals[0].strMeal);
+        setdishOneImage(res.data.meals[0].strMealThum);
+
+
+        setdishTwoName(res.data.meals[1].strMeal);
+        setdishThreeName(res.data.meals[2].strMeal);
+        setdishFourName(res.data.meals[3].strMeal);
+
         console.log(res.data.meals[0].strMeal);
         console.log(res.data.meals[1].strMeal);
         console.log(res.data.meals[2].strMeal);
@@ -71,7 +89,7 @@ function Home() {
             <img src="https://picsum.photos/200" alt="Dish" style={{ width: '100%' }} />
             {/* <img src="{meal.strMealThumb}" alt="Dish" style={{ width: '100%' }} /> */}
             <div className="container">
-              <h4><b>Dish One</b></h4>
+              <h4><b>{dishOneName}</b></h4>
               <p>Ingredients:</p>
             </div>
           </div>
@@ -79,7 +97,7 @@ function Home() {
           <div className='card'>
             <img src="https://picsum.photos/200" alt="Dish" style={{ width: '100%' }} />
             <div className="container">
-              <h4><b>Dish One</b></h4>
+              <h4><b>{dishTwoName}</b></h4>
               <p>Ingredients:</p>
             </div>
           </div>
@@ -87,7 +105,7 @@ function Home() {
         <div className='card'>
             <img src="https://picsum.photos/200" alt="Dish" style={{ width: '100%' }} />
             <div className="container">
-              <h4><b>Dish One</b></h4>
+              <h4><b>{dishThreeName}</b></h4>
               <p>Ingredients:</p>
             </div>
           </div>
@@ -95,7 +113,7 @@ function Home() {
         <div className='card'>
             <img src="https://picsum.photos/200" alt="Dish" style={{ width: '100%' }} />
             <div className="container">
-              <h4><b>Dish One</b></h4>
+              <h4><b>{dishFourName}</b></h4>
               <p>Ingredients:</p>
             </div>
           </div>
