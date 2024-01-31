@@ -38,6 +38,8 @@ function Home() {
     <>
          
         <Header />
+
+        <a href=''>Profile</a>
         {/* Input field for searching dishes */}
         <input className='srch' type="text" placeholder="Search Dish" value={searchInput} onChange={handleInputChange} />
         {/* Search button with click event handler */}
@@ -51,7 +53,7 @@ function Home() {
             <a href="#">Dessert</a>
           </div>
 
-          <a href=''>Profile</a>
+     
 
         
         </div>

@@ -27,21 +27,6 @@
     color: #497c4f;
   }
 
-  .logo-pic{
-  
-    display: flex;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-bottom: 30px;
-  }
-
-  .header{
-   color: #497c4f;
-    margin-left:150px;
-    font-size: 50px;
-
-   
-  }
 
 
 
@@ -72,10 +57,10 @@
 .recipie-div{
     height: 300px;
     width: 80%;
-    background-color: rgb(240, 234, 234);
+    background-color:  #898b9e;
     display: flex;
     justify-content: start;
-    padding: 15px;
+    padding: 20px;
     border-radius: 20px;
     margin-bottom: 10px;
 }
@@ -92,9 +77,10 @@ justify-content: flex-end;
 
 .card {
     /* Add shadows to create the "card" effect */
-    box-shadow: 0 4px 8px 0 rgba(230, 221, 221, 0.2);
+    box-shadow:  #898b9e;
     transition: 0.3s;
     background-color: #f1f1f1;
+    padding-top: 10px;
   }
   
   /* On mouse-over, add a deeper shadow */
@@ -120,4 +106,5 @@ textarea{
   color: black;
   border-color: #497c4f;
 }
+
 

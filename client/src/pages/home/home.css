@@ -1,25 +1,25 @@
-/* Home.css */
-h1 {
-    background-color: rgb(223, 228, 213); /* Change this to your desired background color */
-    /* Add more styles if needed */
-  }
+
   .srch{
     height: 25px;
     width: 180px;
+    background-color: rgb(253, 253, 253);
+    color: rgb(58, 100, 58);
+   padding-left: 20px;
+ 
   }
   .srch-btn {
     height: 30px;
     width: 60px;
-    background-color: #db4880;
+    background-color: #49775b;
     color: white;
     border: none;
     margin-left: 10px;
-    margin-right: 10px;
+    margin-right:190px
   }
   .edit-btn{
     height: 30px;
     width: 60px;
-    background-color: #4877db;
+    background-color: #346645;
     color: white;
     border: none;
     margin-left: 10px;
@@ -28,18 +28,19 @@ h1 {
   .del-btn{
     height: 30px;
     width: 60px;
-    background-color: #da1762;
+    background-color: #346645;
     color: white;
     border: none;
     margin-left: 10px;
     margin-right: 10px;
   }
   .srch-btn:hover {
-    background-color: #a83d6e; /* Change the background color on hover */
+    background-color: #1d4726; /* Change the background color on hover */
   }
 
   .dropbtn {
-    background-color: #04AA6D;
+    background-color: #49775b;
+    color: rgb(60, 97, 60);
     color: white;
     padding: 10px;
     font-size: 16px;
@@ -78,31 +79,38 @@ h1 {
   .dropdown:hover .dropdown-content {display: block;}
   
   /* Change the background color of the dropdown button when the dropdown content is shown */
-  .dropdown:hover .dropbtn {background-color: #3e8e41;}
+  .dropdown:hover .dropbtn {background-color: #1d4726;}
 
 .row-one{
     height: 300px;
     width: 80%;
-    background-color: #4d5bdb;
+    background-color: #898b9e;
     display: inline-flex;
     justify-content: space-evenly;
     padding: 15px;
+    margin-bottom: 20px;
+    margin-top: 10px;
 }
 .row-two{
     height: 300px;
     width: 80%;
-    background-color: #6fdae2;
+    background-color:  #898b9e;
     display: inline-flex;
     justify-content: space-evenly;
     padding: 15px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    margin-top: 10px;
 }
 .row-three{
     height: 300px;
     width: 80%;
-    background-color: #db4880;
+    background-color:  #898b9e;
     display: inline-flex;
     justify-content: space-evenly;
     padding: 15px;
+    margin-bottom: 20px;
+    margin-top: 10px;
 }
 .card {
     /* Add shadows to create the "card" effect */
