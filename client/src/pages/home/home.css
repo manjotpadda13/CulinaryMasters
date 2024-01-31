@@ -4,17 +4,23 @@
     width: 180px;
     background-color: rgb(253, 253, 253);
     color: rgb(58, 100, 58);
-   padding-left: 20px;
- 
-  }
+   padding-right: 150px;
+margin-left: 200px;
+font-family: Arial, Helvetica, sans-serif;
+   }
+
+
   .srch-btn {
     height: 30px;
     width: 60px;
     background-color: #49775b;
     color: white;
     border: none;
-    margin-left: 10px;
-    margin-right:190px
+    margin-right:150px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    
+  
   }
   .edit-btn{
     height: 30px;
@@ -24,6 +30,7 @@
     border: none;
     margin-left: 10px;
     margin-right: 10px;
+    font-family: Arial, Helvetica, sans-serif;
   }
   .del-btn{
     height: 30px;
@@ -33,6 +40,7 @@
     border: none;
     margin-left: 10px;
     margin-right: 10px;
+    font-family: Arial, Helvetica, sans-serif;
   }
   .srch-btn:hover {
     background-color: #1d4726; /* Change the background color on hover */
@@ -46,12 +54,15 @@
     font-size: 16px;
     border: none;
     margin-right: 12px;
+   
+    
   }
   
   /* The container <div> - needed to position the dropdown content */
   .dropdown {
     position: relative;
     display: inline-block;
+    
   }
   
   /* Dropdown Content (Hidden by Default) */
@@ -62,6 +73,7 @@
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+    float: right;
   }
   
   /* Links inside the dropdown */
@@ -127,4 +139,6 @@
   /* Add some padding inside the card container */
   .container {
     padding: 2px 16px;
+    color: rgb(29, 75, 31);
+  font-family: Arial, Helvetica, sans-serif;
   }
