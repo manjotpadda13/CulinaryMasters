@@ -1,0 +1,16 @@
+
+  .logo-pic{
+  
+    display: flex;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 30px;
+  }
+
+  .header{
+    color: #3a9645;
+     margin-right:150px;
+     font-size: 50px;
+ 
+    
+   }

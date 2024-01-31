@@ -2,6 +2,7 @@
 import React from 'react';
 import Header from "../../components/header";
 import Footer from "../../components/footer";
+import './signup.css';
 // import './components/signup/signup.css';
 
 const SignUpPage = () => {
@@ -10,6 +11,11 @@ const SignUpPage = () => {
   
     <div>
       <Header />
+
+      <a href="/">
+        <button>Main page</button>
+      </a>
+
       <h1>Sign Up here</h1>
       <form className="signup-form" action="/auth/signup" method="POST">
         <label className="signup-label" htmlFor="signup-email">Email:</label>
@@ -23,10 +29,7 @@ const SignUpPage = () => {
         <br />
         <button className="signup-button" type="submit">Sign Up</button>
       </form>
-      <a href="/">
-        <button>Main page</button>
-      </a>
-
+    
       <Footer />
     </div>
   );

@@ -10,6 +10,9 @@ const LoginPage = () => {
 
     <div>
       <Header />
+      <a href="/signup">
+        <button>Sign Up</button>
+      </a>
       <h1>Log In Page</h1>
       <form action="/auth/login" method="POST" className="login-form">
         <label htmlFor="login-email" className="login-label">Email:</label>
@@ -21,9 +24,7 @@ const LoginPage = () => {
         <button type="submit" className="login-button">Log In</button>
       </form>
 
-      <a href="/signup">
-        <button>Sign Up</button>
-      </a>
+     
       <Footer />
     </div>
   );
