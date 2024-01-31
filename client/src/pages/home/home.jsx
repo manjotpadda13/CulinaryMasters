@@ -7,6 +7,8 @@ import Footer from "../../components/footer";
 function Home() {
   // State to manage the value of the search input
   const [searchInput, setSearchInput] = useState('');
+  const [apiData, setApiData] = useState(null);// State variable to store API data
+  const ApiKey = '1'
 
   // Function to handle changes in the search input
   const handleInputChange = (e) => {
@@ -21,12 +23,18 @@ function Home() {
       // If the search input is empty, do nothing
       return;
     }
-
+    
     // Axios GET request to fetch data from the meal database API
-    Axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInput}`)
+    Axios.get(`https://www.themealdb.com/api/json/v1/${ApiKey}/search.php?s=${searchInput}`)
       .then((res) => {
         // Log the API data to the console
         console.log(res.data);
+        console.log(res.data.meals);
+        console.log(res.data.meals[0].strMeal);
+        console.log(res.data.meals[1].strMeal);
+        console.log(res.data.meals[2].strMeal);
+        // mealOnetitle = (res.data.meals[0].strMeal);
+        setApiData(res.data);
       })
       .catch((error) => {
         // Log an error message if there's an issue fetching data
@@ -61,6 +69,7 @@ function Home() {
           <h3>Healthy</h3>
           <div className='card'>
             <img src="https://picsum.photos/200" alt="Dish" style={{ width: '100%' }} />
+            {/* <img src="{meal.strMealThumb}" alt="Dish" style={{ width: '100%' }} /> */}
             <div className="container">
               <h4><b>Dish One</b></h4>
               <p>Ingredients:</p>
