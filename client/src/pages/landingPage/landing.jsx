@@ -13,11 +13,10 @@ const LandingPage = () => {
       <Header />
       <h1>Landing Page</h1>
 
-      <label className="create-account" htmlFor="create-account">Create Account:</label>
-        <input className="create-input" type="account" id="create-account" name="email" required />
-<a href="login">
+      <button>Create Account</button>
+      
         <button>login</button>
-      </a>
+      
       
       
 
