@@ -4,10 +4,12 @@
     width: 180px;
     background-color: rgb(253, 253, 253);
     color: rgb(58, 100, 58);
-   padding-right: 150px;
-margin-left: 200px;
-font-family: Arial, Helvetica, sans-serif;
-   }
+    padding-right: 150px;
+    margin-right: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+        
+
 
 
   .srch-btn {
@@ -16,11 +18,8 @@ font-family: Arial, Helvetica, sans-serif;
     background-color: #49775b;
     color: white;
     border: none;
-    margin-right:150px;
     font-family: Arial, Helvetica, sans-serif;
-
-    
-  
+    margin-right:290px;
   }
   .edit-btn{
     height: 30px;
@@ -47,13 +46,16 @@ font-family: Arial, Helvetica, sans-serif;
   }
 
   .dropbtn {
+     height: 35px;
+    width: 100px;
     background-color: #49775b;
     color: rgb(60, 97, 60);
     color: white;
     padding: 10px;
     font-size: 16px;
     border: none;
-    margin-right: 12px;
+   
+    margin-left: 200px;
    
     
   }
@@ -100,13 +102,14 @@ font-family: Arial, Helvetica, sans-serif;
     display: inline-flex;
     justify-content: space-evenly;
     padding: 15px;
+  
     margin-bottom: 20px;
-    margin-top: 10px;
+    margin-top:90px;
 }
 .row-two{
     height: 300px;
     width: 80%;
-    background-color:  #898b9e;
+    background-color:#898b9e;
     display: inline-flex;
     justify-content: space-evenly;
     padding: 15px;
@@ -141,4 +144,22 @@ font-family: Arial, Helvetica, sans-serif;
     padding: 2px 16px;
     color: rgb(29, 75, 31);
   font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  @media screen and (max-width: 480px) {
+
+
+  }
+
+  .row-one h3{
+    color: #f1f1f1;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .row-two h3{
+    color: #f1f1f1;
+  }
+
+  .row-three h3{
+    color: white;
   }

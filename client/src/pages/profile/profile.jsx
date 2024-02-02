@@ -23,7 +23,7 @@ function Profile() {
 rows="4" cols="50">
   Enter Text Here ...
 </textarea>
-<input type="submit" value="submit"></input>
+<button className='search'>Search</button>
 
        
         

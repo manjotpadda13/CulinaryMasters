@@ -10,7 +10,7 @@ const LoginPage = () => {
 
     <div>
       <Header />
-      <a href="/signup">
+      <a href="signup">
         <button>Sign Up</button>
       </a>
       <h1>Log In Page</h1>
