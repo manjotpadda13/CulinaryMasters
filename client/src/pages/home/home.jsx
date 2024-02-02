@@ -9,12 +9,15 @@ function Home() {
   const [searchInput, setSearchInput] = useState('');
   const [apiData, setApiData] = useState(null);// State variable to store API data
   const [dishOneName, setdishOneName] = useState('')
-  const [dishOneImage, setdishOneImage] = useState('')
+  const [dishOneImage, setdishOneImage] = useState('https://picsum.photos/200')
 
 
   const [dishTwoName, setdishTwoName] = useState('')
+  const [dishTwoImage, setdishTwoImage] = useState('https://picsum.photos/200')
   const [dishThreeName, setdishThreeName] = useState('')
+  const [dishThreeImage, setdishThreeImage] = useState('https://picsum.photos/200')
   const [dishFourName, setdishFourName] = useState('')
+  const [dishFourImage, setdishFourImage] = useState('https://picsum.photos/200')
 
   const ApiKey = '1'
 
@@ -41,7 +44,10 @@ function Home() {
 
         // Update dishOneName using setDishOneName
         setdishOneName(res.data.meals[0].strMeal);
-        setdishOneImage(res.data.meals[0].strMealThum);
+        setdishOneImage(res.data.meals[0].strMealThumb);
+        setdishTwoImage(res.data.meals[1].strMealThumb);
+        setdishThreeImage(res.data.meals[2].strMealThumb);
+        setdishFourImage(res.data.meals[3].strMealThumb);
 
 
         setdishTwoName(res.data.meals[1].strMeal);
@@ -51,8 +57,36 @@ function Home() {
         console.log(res.data.meals[0].strMeal);
         console.log(res.data.meals[1].strMeal);
         console.log(res.data.meals[2].strMeal);
+        console.log(dishOneImage)
         // mealOnetitle = (res.data.meals[0].strMeal);
+        // Loop all keys
+        // setApiData(res.data);
+        // var keys =Object.keys(res.data.meals[0])
+        // console.log(keys)
+
         setApiData(res.data);
+
+// Assuming res.data.meals[0] exists
+if (res.data.meals[0]) {
+  var meal = res.data.meals[0];
+  var keys = Object.keys(meal);
+
+  // Filter keys that start with "strIngredient"
+  var strIngredientKeys = keys.filter(key => key.startsWith('strIngredient'));
+
+  // Loop over strIngredientKeys and log both key and value
+  strIngredientKeys.forEach(strIngredientKey => {
+    var mealIngredientsOne = meal[strIngredientKey];
+    console.log(`${mealIngredientsOne}`);
+    // Do something with each strIngredientKey and value if needed
+  });
+} else {
+  console.error('No meal data available in res.data.meals[0]');
+}
+
+
+
+
       })
       .catch((error) => {
         // Log an error message if there's an issue fetching data
@@ -86,16 +120,18 @@ function Home() {
         <div className='row-one'>
           <h3>Healthy</h3>
           <div className='card'>
-            <img src="https://picsum.photos/200" alt="Dish" style={{ width: '100%' }} />
-            {/* <img src="{meal.strMealThumb}" alt="Dish" style={{ width: '100%' }} /> */}
+            <img src={dishOneImage} alt="Dish" style={{ width: '100%' }} />
             <div className="container">
               <h4><b>{dishOneName}</b></h4>
               <p>Ingredients:</p>
+              <ul className='ingredientOneList'>
+                <li></li>
+              </ul>
             </div>
           </div>
           {/* card 2 */}
           <div className='card'>
-            <img src="https://picsum.photos/200" alt="Dish" style={{ width: '100%' }} />
+            <img src={dishTwoImage} alt="Dish" style={{ width: '100%' }} />
             <div className="container">
               <h4><b>{dishTwoName}</b></h4>
               <p>Ingredients:</p>
@@ -103,7 +139,7 @@ function Home() {
           </div>
         {/* card 3 */}
         <div className='card'>
-            <img src="https://picsum.photos/200" alt="Dish" style={{ width: '100%' }} />
+            <img src={dishThreeImage} alt="Dish" style={{ width: '100%' }} />
             <div className="container">
               <h4><b>{dishThreeName}</b></h4>
               <p>Ingredients:</p>
@@ -111,7 +147,7 @@ function Home() {
           </div>
         {/* card 4 */}
         <div className='card'>
-            <img src="https://picsum.photos/200" alt="Dish" style={{ width: '100%' }} />
+            <img src={dishFourImage} alt="Dish" style={{ width: '100%' }} />
             <div className="container">
               <h4><b>{dishFourName}</b></h4>
               <p>Ingredients:</p>
