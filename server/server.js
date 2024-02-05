@@ -1,26 +1,31 @@
 const express = require("express");
-// const allRoutes = require('./controllers');
 const cors = require("cors");
+const session = require("express-session");
+const bodyParser = require("body-parser");
+const allRoutes = require("./controllers");
+const path = require("path");
+
+const SequelizeStore = require("connect-session-sequelize")(session.Store);
+
 require("dotenv").config();
 
 const sequelize = require("./config/connection");
 
-// Sets up the Express App
-// =============================================================
+const app = express();
+
+const frontendPath = path.join(__dirname, "../client/dist");
+
+app.use(express.static(frontendPath));
+// app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(cors());
-const PORT = process.env.PORT || 3000;
-// Requiring our models for syncing
-// const { User,Recipes} = require('./models');
-
-// Sets up the Express app to handle data parsing
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-
-// app.use('/',allRoutes);
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+    credentials: true,
+  })
+);
 
 const authMiddleware = (req, res, next) => {
   res.locals.isAuthenticated = req.session.userId ? true : false;
@@ -49,9 +54,12 @@ app.use(authMiddleware);
 app.use("/auth/expired", sessionExpiredMiddleware);
 app.use(allRoutes);
 
-app.get("/", (req, res) => {
-  res.send("Hello World");
+// Catch-all route for client-side routing
+app.get("*", (req, res) => {
+  res.sendFile(path.join(frontendPath, "index.html"));
 });
+
+const PORT = process.env.PORT || 3000;
 
 sequelize.sync({ force: false }).then(function () {
   app.listen(PORT, function () {
