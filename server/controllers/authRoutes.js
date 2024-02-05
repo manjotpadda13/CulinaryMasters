@@ -19,6 +19,11 @@ router.get('/users', async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 });
+ // Check if the email is already in use
+ const existingUser = await User.findOne({ where: { email } });
+ if (existingUser) {
+   return res.status(400).json({ error: 'Email is already in use' });
+ }
 // Login route
 router.post('/login', async (req, res) => {
   const { email, password } = req.body;
