@@ -39,8 +39,8 @@ function Home() {
     Axios.get(`https://www.themealdb.com/api/json/v1/${ApiKey}/search.php?s=${searchInput}`)
       .then((res) => {
         // Log the API data to the console
-        console.log(res.data);
-        console.log(res.data.meals);
+        // console.log(res.data);
+        // console.log(res.data.meals);
 
         // Update dishOneName using setDishOneName
         setdishOneName(res.data.meals[0].strMeal);
@@ -74,18 +74,100 @@ if (res.data.meals[0]) {
   // Filter keys that start with "strIngredient"
   var strIngredientKeys = keys.filter(key => key.startsWith('strIngredient'));
 
-  // Loop over strIngredientKeys and log both key and value
+  // Get the ul element to append li elements
+  var ulElement = document.querySelector('.ingredientOneList');
+
+  // Loop over strIngredientKeys and append li elements to the ul
   strIngredientKeys.forEach(strIngredientKey => {
-    var mealIngredientsOne = meal[strIngredientKey];
-    console.log(`${mealIngredientsOne}`);
-    // Do something with each strIngredientKey and value if needed
+    var mealIngredient = meal[strIngredientKey];
+    
+    // Check if the ingredient exists before appending
+    if (mealIngredient) {
+      var liElement = document.createElement('li');
+      liElement.textContent = mealIngredient;
+      ulElement.appendChild(liElement);
+    }
   });
 } else {
   console.error('No meal data available in res.data.meals[0]');
 }
+// Ingredient Meal Two
+if (res.data.meals[1]) {
+  var meal = res.data.meals[1];
+  var keys = Object.keys(meal);
+
+  // Filter keys that start with "strIngredient"
+  var strIngredientKeysTwo = keys.filter(key => key.startsWith('strIngredient'));
+
+  // Get the ul element to append li elements
+  var ulElementTwo = document.querySelector('.ingredientTwoList');
+
+  // Loop over strIngredientKeys and append li elements to the ul
+  strIngredientKeysTwo.forEach(strIngredientKey => {
+    var mealIngredient = meal[strIngredientKey];
+    
+    // Check if the ingredient exists before appending
+    if (mealIngredient) {
+      var liElementTwo = document.createElement('li');
+      liElementTwo.textContent = mealIngredient;
+      ulElementTwo.appendChild(liElementTwo);
+    }
+  });
+} else {
+  console.error('No meal data available in res.data.meals[1]');
+}
+// Ingredient meal Three
+if (res.data.meals[2]) {
+  var meal = res.data.meals[2];
+  var keys = Object.keys(meal);
+
+  // Filter keys that start with "strIngredient"
+  var strIngredientKeysThree = keys.filter(key => key.startsWith('strIngredient'));
+
+  // Get the ul element to append li elements
+  var ulElementThree = document.querySelector('.ingredientThreeList');
+
+  // Loop over strIngredientKeys and append li elements to the ul
+  strIngredientKeysThree.forEach(strIngredientKey => {
+    var mealIngredient = meal[strIngredientKey];
+    
+    // Check if the ingredient exists before appending
+    if (mealIngredient) {
+      var liElementThree = document.createElement('li');
+      liElementThree.textContent = mealIngredient;
+      ulElementThree.appendChild(liElementThree);
+    }
+  });
+} else {
+  console.error('No meal data available in res.data.meals[2]');
+}
 
 
+// Ingredient meal Four
+if (res.data.meals[2]) {
+  var meal = res.data.meals[2];
+  var keys = Object.keys(meal);
 
+  // Filter keys that start with "strIngredient"
+  var strIngredientKeysFour = keys.filter(key => key.startsWith('strIngredient'));
+
+  // Get the ul element to append li elements
+  var ulElementFour = document.querySelector('.ingredientFourList');
+
+  // Loop over strIngredientKeys and append li elements to the ul
+  strIngredientKeysFour.forEach(strIngredientKey => {
+    var mealIngredient = meal[strIngredientKey];
+    
+    // Check if the ingredient exists before appending
+    if (mealIngredient) {
+      var liElementFour = document.createElement('li');
+      liElementFour.textContent = mealIngredient;
+      ulElementFour.appendChild(liElementFour);
+    }
+  });
+} else {
+  console.error('No meal data available in res.data.meals[2]');
+}
 
       })
       .catch((error) => {
@@ -94,6 +176,81 @@ if (res.data.meals[0]) {
       });
   };
 
+  // store name state
+  const [rowTwoDishOneName, setrowTwoDishOneName] = useState('')
+  const [rowTwoDishTwoName, setrowTwoDishTwoName] = useState('')
+  const [rowTwoDishThreeName, setrowTwoDishThreeName] = useState('')
+  const [rowTwoDishFourName, setrowTwoDishFourName] = useState('')
+  // store image state 
+  const [rowTwoDishOneImage, setrowTwoDishOneImage] = useState('https://picsum.photos/200')
+  const [rowTwoDishTwoImage, setrowTwoDishTwoImage] = useState('https://picsum.photos/200')
+  const [rowTwoDishThreeImage, setrowTwoDishThreeImage] = useState('https://picsum.photos/200')
+  const [rowTwoDishFourImage, setrowTwoDishFourImage] = useState('https://picsum.photos/200')
+
+  
+// Desert Section
+Axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=Dessert`)
+  .then((res) => {
+    // console.log(res.data.meals);
+    let dessertMeals;
+    dessertMeals = res.data.meals;
+    console.log(dessertMeals);
+
+    // Update rowTwoDishOneName
+    setrowTwoDishOneName(res.data.meals[4].strMeal)
+    setrowTwoDishTwoName(res.data.meals[6].strMeal)
+    setrowTwoDishThreeName(res.data.meals[10].strMeal)
+    setrowTwoDishFourName(res.data.meals[20].strMeal)
+    // Update rowTwoDishOneImage
+    setrowTwoDishOneImage(res.data.meals[4].strMealThumb);
+    setrowTwoDishTwoImage(res.data.meals[6].strMealThumb);
+    setrowTwoDishThreeImage(res.data.meals[10].strMealThumb);
+    setrowTwoDishFourImage(res.data.meals[20].strMealThumb);
+  })
+  .catch((error) => {
+    // Log any errors
+    console.error('Error fetching data:', error);
+  });
+
+// Store seafood
+// store name state
+const [rowThreeDishOneName, setrowThreeDishOneName] = useState('')
+const [rowThreeDishTwoName, setrowThreeDishTwoName] = useState('')
+const [rowThreeDishThreeName, setrowThreeDishThreeName] = useState('')
+const [rowThreeDishFourName, setrowThreeDishFourName] = useState('')
+// // store image state 
+const [rowThreeDishOneImage, setrowThreeDishOneImage] = useState('https://picsum.photos/200')
+const [rowThreeDishTwoImage, setrowThreeDishTwoImage] = useState('https://picsum.photos/200')
+const [rowThreeDishThreeImage, setrowThreeDishThreeImage] = useState('https://picsum.photos/200')
+const [rowThreeDishFourImage, setrowThreeDishFourImage] = useState('https://picsum.photos/200')
+// Seafood Section
+Axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood`)
+  .then((res) => {
+    // console.log(res.data.meals);
+    let seafoodMeals;
+    seafoodMeals = res.data.meals;
+    console.log(seafoodMeals);
+
+    // Update rowThreeDishOneName
+    setrowThreeDishOneName(res.data.meals[18].strMeal)
+    setrowThreeDishTwoName(res.data.meals[25].strMeal)
+    setrowThreeDishThreeName(res.data.meals[27].strMeal)
+    setrowThreeDishFourName(res.data.meals[24].strMeal)
+    // Update rowThreeDishOneImage
+    setrowThreeDishOneImage(res.data.meals[18].strMealThumb);
+    setrowThreeDishTwoImage(res.data.meals[25].strMealThumb);
+    setrowThreeDishThreeImage(res.data.meals[27].strMealThumb);
+    setrowThreeDishFourImage(res.data.meals[24].strMealThumb);
+  // })
+  // .catch((error) => {
+  //   // Log any errors
+  //   console.error('Error fetching data:', error);
+  });
+
+
+
+
+  
   return (
     <>
          
@@ -125,7 +282,7 @@ if (res.data.meals[0]) {
               <h4><b>{dishOneName}</b></h4>
               <p>Ingredients:</p>
               <ul className='ingredientOneList'>
-                <li></li>
+                
               </ul>
             </div>
           </div>
@@ -135,6 +292,9 @@ if (res.data.meals[0]) {
             <div className="container">
               <h4><b>{dishTwoName}</b></h4>
               <p>Ingredients:</p>
+              <ul className='ingredientTwoList'>
+
+              </ul>
             </div>
           </div>
         {/* card 3 */}
@@ -143,6 +303,9 @@ if (res.data.meals[0]) {
             <div className="container">
               <h4><b>{dishThreeName}</b></h4>
               <p>Ingredients:</p>
+              <ul className='ingredientThreeList'>
+
+              </ul>
             </div>
           </div>
         {/* card 4 */}
@@ -151,6 +314,9 @@ if (res.data.meals[0]) {
             <div className="container">
               <h4><b>{dishFourName}</b></h4>
               <p>Ingredients:</p>
+              <ul className='ingredientFourList'>
+
+              </ul>
             </div>
           </div>
 
@@ -159,33 +325,33 @@ if (res.data.meals[0]) {
           <div className='row-two'>
           <h3>Desserts</h3>
           <div className='card'>
-            <img src="https://picsum.photos/200" alt="Dish" style={{ width: '100%' }} />
+            <img src={rowTwoDishOneImage} alt="Dish" style={{ width: '100%' }} />
             <div className="container">
-              <h4><b>Dish One</b></h4>
+              <h4><b>{rowTwoDishOneName}</b></h4>
               <p>Ingredients:</p>
             </div>
           </div>
           {/* card 2 */}
           <div className='card'>
-            <img src="https://picsum.photos/200" alt="Dish" style={{ width: '100%' }} />
+            <img src={rowTwoDishTwoImage} alt="Dish" style={{ width: '100%' }} />
             <div className="container">
-              <h4><b>Dish One</b></h4>
+              <h4><b>{rowTwoDishTwoName}</b></h4>
               <p>Ingredients:</p>
             </div>
           </div>
         {/* card 3 */}
         <div className='card'>
-            <img src="https://picsum.photos/200" alt="Dish" style={{ width: '100%' }} />
+            <img src={rowTwoDishThreeImage} alt="Dish" style={{ width: '100%' }} />
             <div className="container">
-              <h4><b>Dish One</b></h4>
+              <h4><b>{rowTwoDishThreeName}</b></h4>
               <p>Ingredients:</p>
             </div>
           </div>
         {/* card 4 */}
         <div className='card'>
-            <img src="https://picsum.photos/200" alt="Dish" style={{ width: '100%' }} />
+            <img src={rowTwoDishFourImage} alt="Dish" style={{ width: '100%' }} />
             <div className="container">
-              <h4><b>Dish One</b></h4>
+              <h4><b>{rowTwoDishFourName}</b></h4>
               <p>Ingredients:</p>
             </div>
           </div>
@@ -193,35 +359,35 @@ if (res.data.meals[0]) {
         </div>
         {/* row three */}
         <div className='row-three'>
-          <h3>Appetizers</h3>
+          <h3>Seadfood</h3>
           <div className='card'>
-            <img src="https://picsum.photos/200" alt="Dish" style={{ width: '100%' }} />
+            <img src={rowThreeDishOneImage} alt="Dish" style={{ width: '100%' }} />
             <div className="container">
-              <h4><b>Dish One</b></h4>
+              <h4><b>{rowThreeDishOneName}</b></h4>
               <p>Ingredients:</p>
             </div>
           </div>
           {/* card 2 */}
           <div className='card'>
-            <img src="https://picsum.photos/200" alt="Dish" style={{ width: '100%' }} />
+            <img src={rowThreeDishTwoImage} alt="Dish" style={{ width: '100%' }} />
             <div className="container">
-              <h4><b>Dish One</b></h4>
+              <h4><b>{rowThreeDishTwoName}</b></h4>
               <p>Ingredients:</p>
             </div>
           </div>
         {/* card 3 */}
         <div className='card'>
-            <img src="https://picsum.photos/200" alt="Dish" style={{ width: '100%' }} />
+            <img src={rowThreeDishThreeImage} alt="Dish" style={{ width: '100%' }} />
             <div className="container">
-              <h4><b>Dish One</b></h4>
+              <h4><b>{rowThreeDishThreeName}</b></h4>
               <p>Ingredients:</p>
             </div>
           </div>
         {/* card 4 */}
         <div className='card'>
-            <img src="https://picsum.photos/200" alt="Dish" style={{ width: '100%' }} />
+            <img src={rowThreeDishFourImage} alt="Dish" style={{ width: '100%' }} />
             <div className="container">
-              <h4><b>Dish One</b></h4>
+              <h4><b>{rowThreeDishFourName}</b></h4>
               <p>Ingredients:</p>
             </div>
           </div>
