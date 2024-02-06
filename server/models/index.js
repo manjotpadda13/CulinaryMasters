@@ -1,23 +1,23 @@
 const Session = require("./session");
 const User = require("./user");
-const Post = require("./post");
+const Recipe = require("./Recipe");
 const Comment = require("./comment");
 
 User.hasMany(Session, { foreignKey: "userId", onDelete: "CASCADE" });
 User.hasMany(Comment, { foreignKey: "userId", onDelete: "CASCADE" });
-User.hasMany(Post, { foreignKey: "userId", onDelete: "CASCADE" });
+User.hasMany(Recipe, { foreignKey: "userId", onDelete: "CASCADE" });
 
 Session.belongsTo(User, { foreignKey: "userId" });
 
 Comment.belongsTo(User, { foreignKey: "userId", as: "user" });
-Comment.belongsTo(Post, { foreignKey: "postId", as: "post" });
+Comment.belongsTo(Recipe, { foreignKey: "recipeId", as: "recipe" });
 
-Post.belongsTo(User, { foreignKey: "userId" });
-Post.hasMany(Comment, { foreignKey: "postId", onDelete: "CASCADE" });
+Recipe.belongsTo(User, { foreignKey: "userId" });
+Recipe.hasMany(Comment, { foreignKey: "recipeId", onDelete: "CASCADE" });
 
 module.exports = {
   Comment,
   Session,
   User,
-  Post,
+  Recipe,
 };
