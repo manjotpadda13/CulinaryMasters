@@ -2,20 +2,15 @@ import React, { useState } from "react";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
 import { useUser } from "../../UserContext";
-
 // import './components/login/login.css';
-
 const LoginPage = () => {
   const { user, setUser } = useUser();
-
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
       fetch("http://localhost:3000/auth/login", {
         method: "POST",
@@ -46,7 +41,6 @@ const LoginPage = () => {
       console.error("Error during login:", error);
     }
   };
-
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -54,7 +48,6 @@ const LoginPage = () => {
       [name]: value,
     }));
   };
-
   return (
     <div>
       <Header />
@@ -82,7 +75,6 @@ const LoginPage = () => {
           required
           className="login-input"
         />
-
         <button type="submit" className="login-button">
           Log In
         </button>
@@ -94,5 +86,4 @@ const LoginPage = () => {
     </div>
   );
 };
-
 export default LoginPage;

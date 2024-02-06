@@ -1,6 +1,8 @@
+
 import React from "react";
 import "./header.css";
 import { useUser } from "../UserContext";
+
 
 function Header() {
   const { user, setUser } = useUser();

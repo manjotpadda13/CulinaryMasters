@@ -2,6 +2,7 @@
 import React, { useState }  from 'react';
 import Header from "../../components/header";
 import Footer from "../../components/footer";
+import './signup.css';
 // import './components/signup/signup.css';
 
 const SignUpPage = () => {
@@ -50,6 +51,11 @@ const SignUpPage = () => {
   return ( 
     <div>
       <Header />
+
+      <a href="/">
+        <button>Main page</button>
+      </a>
+
       <h1>Sign Up here</h1>
       <form className="signup-form" onSubmit={handleSubmit}>
         <label className="signup-label" htmlFor="signup-email">
@@ -95,10 +101,7 @@ const SignUpPage = () => {
           Sign Up
         </button>
       </form>
-      <a href="/">
-        <button>Main page</button>
-      </a>
-
+    
       <Footer />
     </div>
   );
