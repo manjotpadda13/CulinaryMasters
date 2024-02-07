@@ -37,31 +37,32 @@ function Header() {
 
   return (
     <>
-      <div className="profile-header">
-        <div className="logo-pic">
+      <nav className="profile-header">      
           <img
             src="https://cmsrl.com/wp-content/uploads/2018/06/ICONA-CM.png"
             alt="Logo"
-            style={{ width: "10%" }}
-          />
+            style={{ width: "10%" }}/>
+            
           <h1 className="header">Culinary Masters</h1>
-        </div>
-        <div className="right-buttons">
-          <a href="/signup" className="button-link">
-            <button>Sign Up</button>
-          </a>
-          <a href="/login" className="button-link">
-            <button>Login</button>
-          </a>
-          <a
-            href="/logout"
-            className="button-link logout-btn"
-            onClick={handleLogout}
-          >
-            <button>Logout</button>
-          </a>
-        </div>
-      </div>
+          <div>
+            <a href="/signup" >
+              Sign up
+            </a>
+            <a href="/login">
+              Login
+            </a>
+            <a
+              href="/logout"
+            
+              onClick={handleLogout}>
+              Logout
+            </a>
+          </div>
+
+          
+          
+
+      </nav>
     </>
   );
 }

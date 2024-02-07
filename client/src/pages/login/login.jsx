@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
 import { useUser } from "../../UserContext";
+import './login.css';
 // import './components/login/login.css';
 const LoginPage = () => {
   const { user, setUser } = useUser();
@@ -79,8 +80,8 @@ const LoginPage = () => {
           Log In
         </button>
       </form>
-      <a href="/signup">
-        <button>Sign Up</button>
+      <a href="signup">
+        <button className="sign-up-page">Sign Up</button>
       </a>
       <Footer />
     </div>

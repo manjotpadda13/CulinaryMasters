@@ -53,7 +53,7 @@ const SignUpPage = () => {
       <Header />
 
       <a href="/">
-        <button>Main page</button>
+        <button className="main-page" >Main page</button>
       </a>
 
       <h1>Sign Up here</h1>
