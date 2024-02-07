@@ -12,7 +12,7 @@ h3 {
   margin-right: 150px;
 }
 a:link {
-  padding-left: 900px;
+  /* padding-left: 900px; */
   color: #F1F1F1;
 }
 a:hover {

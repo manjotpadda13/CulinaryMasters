@@ -11,19 +11,17 @@ const LandingPage = () => {
 
     <div>
       <Header />
-      <h1>Landing Page</h1>
+      <h1>About Us</h1>
 
-      <label className="create-account" htmlFor="create-account">Create Account:</label>
-        <input className="create-input" type="account" id="create-account" name="email" required />
-<a href="login">
-        <button>login</button>
-      </a>
+     <h2>
+Hi there, This is culinary masters. Our motive behind creating this website is for users to explore new dishes around the world with diffrent alternatives as well. Also a space where users are able to share you receipe with the world. I hope you enjoy what we've created
+     </h2>
       
       
 
       <Footer />
     </div>
-
+ 
     
   );
 };
