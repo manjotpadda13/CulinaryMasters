@@ -278,15 +278,15 @@ const userLogin = () => {
           <Route
             exact
             path="/"
-            render={() => (isLoggedIn ? <h2>Home Content Goes Here</h2> : null)}
+            // render={() => (isLoggedIn ? <h2>Home Content Goes Here</h2> : null)}
             />
           <Route
             path="/signup"
-            render={() => (!isLoggedIn ? <SignUpPage /> : null)}
+            // render={() => (!isLoggedIn ? <SignUpPage /> : null)}
             />
           <Route
             path="/login"
-            render={() => (!isLoggedIn ? <LoginPage onLogin={handleLogin} /> : null)}
+            // render={() => (!isLoggedIn ? <LoginPage onLogin={handleLogin} /> : null)}
             />
         </div>
       </Router>
