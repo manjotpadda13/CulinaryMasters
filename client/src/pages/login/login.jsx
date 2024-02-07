@@ -81,7 +81,7 @@ const LoginPage = () => {
         </button>
       </form>
       <a href="signup">
-        <button>Sign Up</button>
+        <button className="sign-up-page">Sign Up</button>
       </a>
       <Footer />
     </div>
