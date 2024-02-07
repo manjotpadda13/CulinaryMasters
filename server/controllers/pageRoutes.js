@@ -3,11 +3,11 @@ const router = express.Router();
 const { Recipe, User, Comment } = require("../models");
 
 router.get("/", (req, res) => {
-  res.render("main");
+  // res.render("main");
 });
 
 router.get("/recipe", (req, res) => {
-  res.render("recipe");
+  // res.render("recipe");
 });
 
 router.get("/recipe/:id", async (req, res) => {
@@ -51,7 +51,7 @@ router.get("/recipe/:id", async (req, res) => {
     const isCreator = req.session.userId === plainRecipe.userId;
 
     // Render the view with recipe details, comments, and isCreator flag
-    res.render("card", { recipe: plainRecipe, isCreator });
+    // res.render("card", { recipe: plainRecipe, isCreator });
   } catch (error) {
     // Handle server errors
     console.error(error);
@@ -75,7 +75,7 @@ router.get("/recipe/edit/:id", async (req, res) => {
       return res.status(404).send("recipe not found");
     }
     const plainRecipe = recipe.get({ plain: true });
-    res.render("recipe", { recipe: plainRecipe });
+    // res.render("recipe", { recipe: plainRecipe });
   } catch (error) {
     console.error(error);
     res.status(500).send("Internal server error");
@@ -83,11 +83,11 @@ router.get("/recipe/edit/:id", async (req, res) => {
 });
 
 router.get("/login", (req, res) => {
-  res.render("login");
+  // res.render("login");
 });
 
 router.get("/signup", (req, res) => {
-  res.render("signup");
+  // res.render("signup");
 });
 
 router.get("/recipes", async (req, res) => {
@@ -103,7 +103,7 @@ router.get("/recipes", async (req, res) => {
     const recipes = recipeInstances.map((recipe) =>
       recipe.get({ plain: true })
     );
-    res.render("recipes", { recipes: recipes });
+    // res.render("recipes", { recipes: recipes });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Internal server error" });
@@ -111,7 +111,7 @@ router.get("/recipes", async (req, res) => {
 });
 
 router.get("/signup", (req, res) => {
-  res.render("signup");
+  // res.render("signup");
 });
 
 module.exports = router;
