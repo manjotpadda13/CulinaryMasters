@@ -60,7 +60,7 @@ function Home() {
     Axios.get(`https://www.themealdb.com/api/json/v1/${ApiKey}/search.php?s=${searchInput}`)
       .then((res) => {
         // Log the API data to the console
-        // console.log(res.data);
+        console.log(res.data);
         // console.log(res.data.meals);
 
         // Update dishOneName using setDishOneName
@@ -75,10 +75,10 @@ function Home() {
         setdishThreeName(res.data.meals[2].strMeal);
         setdishFourName(res.data.meals[3].strMeal);
 
-        console.log(res.data.meals[0].strMeal);
-        console.log(res.data.meals[1].strMeal);
-        console.log(res.data.meals[2].strMeal);
-        console.log(dishOneImage)
+        // console.log(res.data.meals[0].strMeal);
+        // console.log(res.data.meals[1].strMeal);
+        // console.log(res.data.meals[2].strMeal);
+        // console.log(dishOneImage)
         // mealOnetitle = (res.data.meals[0].strMeal);
         // Loop all keys
         // setApiData(res.data);
@@ -106,7 +106,7 @@ function Home() {
           });
           rowOneDishOneIngredients = (ingredientList);
           setrowOneDishOneIngredients(rowOneDishOneIngredients)
-          console.log(rowOneDishOneIngredients);
+          // console.log(rowOneDishOneIngredients);
         } else {
           console.error('No meal data available in res.data.meals[0]');
         }
@@ -131,7 +131,7 @@ function Home() {
           });
           rowOneDishTwoIngredients = (ingredientList);
           setrowOneDishTwoIngredients(rowOneDishTwoIngredients)
-          console.log(rowOneDishTwoIngredients);
+          // console.log(rowOneDishTwoIngredients);
         } else {
           console.error('No meal data available in res.data.meals[0]');
         }
@@ -183,7 +183,7 @@ function Home() {
           });
           rowOneDishFourIngredients = (ingredientList);
           setrowOneDishFourIngredients(rowOneDishFourIngredients)
-          console.log(rowOneDishFourIngredients);
+          // console.log(rowOneDishFourIngredients);
         } else {
           console.error('No meal data available in res.data.meals[0]');
         }
@@ -218,7 +218,7 @@ Axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=Dessert`)
     // console.log(res.data.meals);
     let dessertMeals;
     dessertMeals = res.data.meals;
-    console.log(dessertMeals);
+    // console.log(dessertMeals);
 
     // Update rowTwoDishOneName
     setrowTwoDishOneName(res.data.meals[4].strMeal)
@@ -242,6 +242,7 @@ Axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=Banana%20Pancake
   if (res.data.meals && res.data.meals.length > 0) {
     var meal = res.data.meals[0]; // Access the first meal object
     var ingredientList = [];
+    var directions = [];
 
     // Iterate over all keys in the meal object
     for (const key in meal) {
@@ -250,9 +251,17 @@ Axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=Banana%20Pancake
         ingredientList.push(meal[key]); // Add the ingredient to the list
       }
     }
+    // Get Instructions
+    for (const keytwo in meal) {
+      // Check if the key starts with "strIngredient" and if the value is not null or empty
+      if (keytwo.startsWith('strInstructions') && meal[keytwo] && meal[keytwo].trim() !== '') {
+        directions.push(meal[keytwo]); // Add the ingredient to the list
+        // console.log(directions);
+      }
+    }
 
     // Now ingredientList contains all ingredients
-    console.log(ingredientList);
+    // console.log(ingredientList);
     // You can set it to your state or use it wherever you need
     setrowTwoDishOneIngredients(ingredientList);
     
@@ -301,6 +310,7 @@ Axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=Canadian%20Butte
   if (res.data.meals && res.data.meals.length > 0) {
     var meal = res.data.meals[0]; // Access the first meal object
     var ingredientList = [];
+    var directions = [];
 
     // Iterate over all keys in the meal object
     for (const key in meal) {
@@ -309,9 +319,17 @@ Axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=Canadian%20Butte
         ingredientList.push(meal[key]); // Add the ingredient to the list
       }
     }
+    // Get Instructions
+    for (const keytwo in meal) {
+      // Check if the key starts with "strIngredient" and if the value is not null or empty
+      if (keytwo.startsWith('strInstructions') && meal[keytwo] && meal[keytwo].trim() !== '') {
+        directions.push(meal[keytwo]); // Add the ingredient to the list
+        // console.log(directions);
+      }
+    }
 
     // Now ingredientList contains all ingredients
-    console.log(ingredientList);
+    // console.log(ingredientList);
     // You can set it to your state or use it wherever you need
     setrowTwoDishThreeIngredients(ingredientList);
     
@@ -330,6 +348,7 @@ Axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=Chocolate%20Souf
   if (res.data.meals && res.data.meals.length > 0) {
     var meal = res.data.meals[0]; // Access the first meal object
     var ingredientList = [];
+    var directions = [];
 
     // Iterate over all keys in the meal object
     for (const key in meal) {
@@ -338,9 +357,17 @@ Axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=Chocolate%20Souf
         ingredientList.push(meal[key]); // Add the ingredient to the list
       }
     }
+    // Get Instructions
+    for (const keytwo in meal) {
+      // Check if the key starts with "strIngredient" and if the value is not null or empty
+      if (keytwo.startsWith('strInstructions') && meal[keytwo] && meal[keytwo].trim() !== '') {
+        directions.push(meal[keytwo]); // Add the ingredient to the list
+        // console.log(directions);
+      }
+    }
 
     // Now ingredientList contains all ingredients
-    console.log(ingredientList);
+    // console.log(ingredientList);
     // You can set it to your state or use it wherever you need
     setrowTwoDishFourIngredients(ingredientList);
     
@@ -371,7 +398,7 @@ Axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood`)
     // console.log(res.data.meals);
     let seafoodMeals;
     seafoodMeals = res.data.meals;
-    console.log(seafoodMeals);
+    // console.log(seafoodMeals);
 
     // Update rowThreeDishOneName
     setrowThreeDishOneName(res.data.meals[18].strMeal)
@@ -396,6 +423,7 @@ Axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=Salmon%20Avocado
   if (res.data.meals && res.data.meals.length > 0) {
     var meal = res.data.meals[0]; // Access the first meal object
     var ingredientList = [];
+    var directions = [];
 
     // Iterate over all keys in the meal object
     for (const key in meal) {
@@ -404,9 +432,16 @@ Axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=Salmon%20Avocado
         ingredientList.push(meal[key]); // Add the ingredient to the list
       }
     }
-
+    // Get Instructions
+    for (const keytwo in meal) {
+      // Check if the key starts with "strIngredient" and if the value is not null or empty
+      if (keytwo.startsWith('strInstructions') && meal[keytwo] && meal[keytwo].trim() !== '') {
+        directions.push(meal[keytwo]); // Add the ingredient to the list
+        // console.log(directions);
+      }
+    }
     // Now ingredientList contains all ingredients
-    console.log(ingredientList);
+    // console.log(ingredientList);
     // You can set it to your state or use it wherever you need
     setrowThreeDishOneIngredients(ingredientList);
     
@@ -425,6 +460,7 @@ Axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=Sushi`)
   if (res.data.meals && res.data.meals.length > 0) {
     var meal = res.data.meals[0]; // Access the first meal object
     var ingredientList = [];
+    var directions = [];
 
     // Iterate over all keys in the meal object
     for (const key in meal) {
@@ -433,9 +469,17 @@ Axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=Sushi`)
         ingredientList.push(meal[key]); // Add the ingredient to the list
       }
     }
+    // Get Instructions
+    for (const keytwo in meal) {
+      // Check if the key starts with "strIngredient" and if the value is not null or empty
+      if (keytwo.startsWith('strInstructions') && meal[keytwo] && meal[keytwo].trim() !== '') {
+        directions.push(meal[keytwo]); // Add the ingredient to the list
+        // console.log(directions);
+      }
+    }
 
     // Now ingredientList contains all ingredients
-    console.log(ingredientList);
+    // console.log(ingredientList);
     // You can set it to your state or use it wherever you need
     setrowThreeDishTwoIngredients(ingredientList);
     
@@ -454,6 +498,7 @@ Axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=Tuna%20and%20Egg
   if (res.data.meals && res.data.meals.length > 0) {
     var meal = res.data.meals[0]; // Access the first meal object
     var ingredientList = [];
+    var directions = [];
 
     // Iterate over all keys in the meal object
     for (const key in meal) {
@@ -462,9 +507,17 @@ Axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=Tuna%20and%20Egg
         ingredientList.push(meal[key]); // Add the ingredient to the list
       }
     }
+    // Get Instructions
+    for (const keytwo in meal) {
+      // Check if the key starts with "strIngredient" and if the value is not null or empty
+      if (keytwo.startsWith('strInstructions') && meal[keytwo] && meal[keytwo].trim() !== '') {
+        directions.push(meal[keytwo]); // Add the ingredient to the list
+        // console.log(directions);
+      }
+    }
 
     // Now ingredientList contains all ingredients
-    console.log(ingredientList);
+    // console.log(ingredientList);
     // You can set it to your state or use it wherever you need
     setrowThreeDishThreeIngredients(ingredientList);
     
@@ -483,6 +536,7 @@ Axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=Spring%20onion%2
   if (res.data.meals && res.data.meals.length > 0) {
     var meal = res.data.meals[0]; // Access the first meal object
     var ingredientList = [];
+    var directions = [];
 
     // Iterate over all keys in the meal object
     for (const key in meal) {
@@ -491,9 +545,17 @@ Axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=Spring%20onion%2
         ingredientList.push(meal[key]); // Add the ingredient to the list
       }
     }
+    // Get Instructions
+    for (const keytwo in meal) {
+      // Check if the key starts with "strIngredient" and if the value is not null or empty
+      if (keytwo.startsWith('strInstructions') && meal[keytwo] && meal[keytwo].trim() !== '') {
+        directions.push(meal[keytwo]); // Add the ingredient to the list
+        // console.log(directions);
+      }
+    }
 
     // Now ingredientList contains all ingredients
-    console.log(ingredientList);
+    // console.log(ingredientList);
     // You can set it to your state or use it wherever you need
     setrowThreeDishFourIngredients(ingredientList);
     
