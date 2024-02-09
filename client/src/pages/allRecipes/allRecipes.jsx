@@ -25,7 +25,8 @@ const AllRecipesPage = () => {
           throw new Error("Failed to fetch recipes");
         }
       })
-      .then((data) => {
+      .then((data) => { 
+        console.log(data)
         setUser(data.user);
         setRecipes(data.recipes);
       })
@@ -61,12 +62,12 @@ const AllRecipesPage = () => {
       <div>
         {recipes.map((recipe) => (
           <div key={recipe.id} className="recipe-div">
-            <strong>User:</strong> {recipe.User.username}
+            <strong>User:</strong> {recipe?.User?.username}
             <div>
               <h4>{recipe.title}</h4>
               <p>{recipe.content}</p>
             </div>
-            {user && user.username === recipe.User.username && (
+            {user && user.username === recipe?.User?.username && (
               <div className="btns">
                 <Link to={`/edit/${recipe.id}`}>
                   <button className="edit-btn">Edit</button>
