@@ -2,14 +2,6 @@ const express = require("express");
 const router = express.Router();
 const { Recipe, User, Comment } = require("../models");
 
-router.get("/", (req, res) => {
-  // res.render("main");
-});
-
-router.get("/recipe", (req, res) => {
-  // res.render("recipe");
-});
-
 router.get("/recipe/:id", async (req, res) => {
   try {
     const recipeId = req.params.id;
@@ -82,14 +74,6 @@ router.get("/recipe/edit/:id", async (req, res) => {
   }
 });
 
-router.get("/login", (req, res) => {
-  // res.render("login");
-});
-
-router.get("/signup", (req, res) => {
-  // res.render("signup");
-});
-
 router.get("/recipes", async (req, res) => {
   try {
     const recipeInstances = await Recipe.findAll({
@@ -108,10 +92,6 @@ router.get("/recipes", async (req, res) => {
     console.error(error);
     res.status(500).json({ error: "Internal server error" });
   }
-});
-
-router.get("/signup", (req, res) => {
-  // res.render("signup");
 });
 
 module.exports = router;
