@@ -3,8 +3,7 @@ import Header from "../../components/header";
 import Footer from "../../components/footer";
 import { useUser } from "../../UserContext";
 import { Link } from "react-router-dom";
-
-// import './components/login/login.css';
+import "./allRecipes.css";
 
 const AllRecipesPage = () => {
   const { user, setUser } = useUser();
@@ -60,14 +59,16 @@ const AllRecipesPage = () => {
       <Header />
       <div>
         {recipes.map((recipe) => (
-          <div key={recipe.id} className="recipe-div">
-            <strong>User:</strong> {recipe.User.username}
+          <div key={recipe.id} className="recipe-card">
+            <div className="recipe-user">
+              <strong>User:</strong> {recipe.User.username}
+            </div>
             <div>
-              <h4>{recipe.title}</h4>
-              <p>{recipe.content}</p>
+              <h4 className="recipe-title">{recipe.title}</h4>
+              <p className="recipe-content">{recipe.content}</p>
             </div>
             {user && user.username === recipe.User.username && (
-              <div className="btns">
+              <div className="btn-container">
                 <Link to={`/edit/${recipe.id}`}>
                   <button className="edit-btn">Edit</button>
                 </Link>
