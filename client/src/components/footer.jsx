@@ -6,7 +6,7 @@ function Footer() {
   return (
     <>
 <div className ="footer">
-Culinary Masters footer 
+(e) - Culinary Masters - EST: 2024
 </div>
 
       

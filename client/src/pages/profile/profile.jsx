@@ -88,7 +88,7 @@ function Profile() {
   return (
     <>
       <Header />
-      <a href="home">Home</a>
+      <a href='/' class="home-link">Home</a>
       <div className="profile-pic">
         <img
           src="https://picsum.photos/200"
@@ -96,7 +96,7 @@ function Profile() {
           style={{ width: "10%" }}
         />
         <h2 className="user">
-          {user ? <p>Welcome, {user.username}!</p> : <p>Please log in.</p>}
+          {user ? <p>Welcome, {user.username}!</p> : <p>Please log in</p>}
         </h2>
       </div>
       <div>
@@ -123,7 +123,7 @@ function Profile() {
             onChange={handleInputChange}
           />
 
-          <button type="submit">Submit</button>
+          <button type="submit" className="submit-btn">Submit</button>
         </form>
       </div>
       <div>

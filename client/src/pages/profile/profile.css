@@ -11,13 +11,8 @@ h3 {
   text-align: center;
   margin-right: 150px;
 }
-a:link {
-  padding-left: 900px;
-  color: #F1F1F1;
-}
-a:hover {
-  color: #497C4F;
-}
+
+
 .logo-pic {
   display: flex;
   padding-left: 50px;
@@ -36,6 +31,7 @@ a:hover {
 }
 .user {
   padding-left: 10px;
+  color: #497C4F;
 }
 .profile-header {
   padding-bottom: 15px;
@@ -88,4 +84,36 @@ textarea {
   background-color: white;
   color: black;
   border-color: #497C4F;
+}
+.home-link{
+color:  rgb(33, 85, 50);
+padding-right: 1000px;
+
+}
+
+.add{
+  color: #406649be;
+  margin-right: 20px;
+
+}
+
+#title{
+padding-left: 30px;
+margin-left: 20px;
+}
+
+#content{
+  padding-left: 30px;
+  margin-left: 100px;
+  
+}
+
+
+
+.submit-btn{
+  color: rgb(33, 85, 50);
+  font-size: 15px;
+  margin-top: 20px;
+  margin-bottom: 150px;
+  margin-left: 20px;
 }
