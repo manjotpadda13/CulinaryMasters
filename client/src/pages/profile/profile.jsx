@@ -88,7 +88,7 @@ function Profile() {
   return (
     <>
       <Header />
-      <a href='/' class="home-link">Home</a>
+      <a href='home' class="home-link">Home</a>
       <div className="profile-pic">
         <img
           src="https://picsum.photos/200"

@@ -573,7 +573,7 @@ Axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=Spring%20onion%2
          
         <Header />
 
-        <a href='/' class="profile-link">Profile</a>
+        <a href='profile' class="profile-link">Profile</a>
         {/* Input field for searching dishes */}
         <input className='srch' type="text" placeholder="Search Dish" value={searchInput} onChange={handleInputChange} />
         {/* Search button with click event handler */}
