@@ -573,7 +573,7 @@ Axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=Spring%20onion%2
          
         <Header />
 
-        <a href=''>Profile</a>
+        <a href='/' class="profile-link">Profile</a>
         {/* Input field for searching dishes */}
         <input className='srch' type="text" placeholder="Search Dish" value={searchInput} onChange={handleInputChange} />
         {/* Search button with click event handler */}
@@ -717,7 +717,7 @@ Axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=Spring%20onion%2
         </div>
         {/* row three */}
         <div className='row-three'>
-          <h3>Seadfood</h3>
+          <h3>Seafood</h3>
           <div className='card'>
             <img src={rowThreeDishOneImage} alt="Dish" style={{ width: '100%' }} />
             <div className="container">

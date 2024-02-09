@@ -3,6 +3,7 @@ import Header from "../../components/header";
 import Footer from "../../components/footer";
 import { useUser } from "../../UserContext";
 // import './components/login/login.css';
+import "./login.css"; 
 const LoginPage = () => {
   const { user, setUser } = useUser();
   const [formData, setFormData] = useState({
@@ -80,7 +81,7 @@ const LoginPage = () => {
         </button>
       </form>
       <a href="/signup">
-        <button>Sign Up</button>
+        <button className= "sign-up">Sign Up</button>
       </a>
       <Footer />
     </div>

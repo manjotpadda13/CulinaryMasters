@@ -52,11 +52,11 @@ const SignUpPage = () => {
     <div>
       <Header />
 
-      <a href="/">
-        <button>Main page</button>
+      <a href='/'>
+        <button className="main-page">Main page</button>
       </a>
 
-      <h1>Sign Up here</h1>
+      <h5>Sign Up here</h5>
       <form className="signup-form" onSubmit={handleSubmit}>
         <label className="signup-label" htmlFor="signup-email">
           Email:
