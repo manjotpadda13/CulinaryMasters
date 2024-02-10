@@ -38,12 +38,13 @@ function Header() {
   return (
     
       <>
-      <nav className="profile-header">      
+      <nav className="profile-header"> 
+        <a href="home">   
           <img
             src="https://cmsrl.com/wp-content/uploads/2018/06/ICONA-CM.png" className="logo-pic"
             alt="Logo"
           />
-            
+            </a>  
           <h1 className="header">Culinary Masters</h1>
           <div>
             <a href="/signup" >
