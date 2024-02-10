@@ -33,11 +33,24 @@ function Home() {
   let [rowTwoDishThreeIngredients, setrowTwoDishThreeIngredients] = useState();
   let [rowTwoDishFourIngredients, setrowTwoDishFourIngredients] = useState();
 
+  // Dessert Instructions
+  let [rowTwoDishOneInstructions, setrowTwoDishOneInstructions] = useState();
+  let [rowTwoDishTwoInstructions, setrowTwoDishTwoInstructions] = useState();
+  let [rowTwoDishThreeInstructions, setrowTwoDishThreeInstructions] = useState();
+  let [rowTwoDishFourInstructions, setrowTwoDishFourInstructions] = useState();
+
   // Seafood Ingredients
   let [rowThreeDishOneIngredients, setrowThreeDishOneIngredients] = useState();
   let [rowThreeDishTwoIngredients, setrowThreeDishTwoIngredients] = useState();
   let [rowThreeDishThreeIngredients, setrowThreeDishThreeIngredients] = useState();
   let [rowThreeDishFourIngredients, setrowThreeDishFourIngredients] = useState();
+
+  // Seafood Instructions
+  let [rowThreeDishOneInstructions, setrowThreeDishOneInstructions] = useState();
+  let [rowThreeDishTwoInstructions, setrowThreeDishTwoInstructions] = useState();
+  let [rowThreeDishThreeInstructions, setrowThreeDishThreeInstructions] = useState();
+  let [rowThreeDishFourInstructions, setrowThreeDishFourInstructions] = useState();
+
 
 
   const ApiKey = '1'
@@ -91,21 +104,19 @@ function Home() {
           var meal = res.data.meals[0];
           var keys = Object.keys(meal);
         
-          // Filter keys that start with "strIngredient"
-          var strIngredientKeys = keys.filter(key => key.startsWith('strIngredient'));
+          // Filter keys that start with "strIngredient" and have non-null, non-empty values
+          var strIngredientKeys = keys.filter(key => key.startsWith('strIngredient') && meal[key]);
         
-          
-          var ingredientList = []
+          var ingredientList = [];
         
           // Loop over strIngredientKeys and append li elements to the ul
           strIngredientKeys.forEach(strIngredientKey => {
             var mealIngredient = meal[strIngredientKey];
-            
-            ingredientList.push(mealIngredient)
-           
+            ingredientList.push(mealIngredient);
           });
-          rowOneDishOneIngredients = (ingredientList);
-          setrowOneDishOneIngredients(rowOneDishOneIngredients)
+        
+          rowOneDishOneIngredients = ingredientList;
+          setrowOneDishOneIngredients(rowOneDishOneIngredients);
           // console.log(rowOneDishOneIngredients);
         } else {
           console.error('No meal data available in res.data.meals[0]');
@@ -117,7 +128,7 @@ function Home() {
           var keys = Object.keys(meal);
         
           // Filter keys that start with "strIngredient"
-          var strIngredientKeys = keys.filter(key => key.startsWith('strIngredient'));
+          var strIngredientKeys = keys.filter(key => key.startsWith('strIngredient') && meal[key]);
         
           
           var ingredientList = []
@@ -125,15 +136,14 @@ function Home() {
           // Loop over strIngredientKeys and append li elements to the ul
           strIngredientKeys.forEach(strIngredientKey => {
             var mealIngredient = meal[strIngredientKey];
-            
             ingredientList.push(mealIngredient)
-           
           });
+
           rowOneDishTwoIngredients = (ingredientList);
           setrowOneDishTwoIngredients(rowOneDishTwoIngredients)
           // console.log(rowOneDishTwoIngredients);
         } else {
-          console.error('No meal data available in res.data.meals[0]');
+          console.error('No meal data available in res.data.meals[1]');
         }
 
         // Ingredient Meal Three
@@ -142,7 +152,7 @@ function Home() {
           var keys = Object.keys(meal);
         
           // Filter keys that start with "strIngredient"
-          var strIngredientKeys = keys.filter(key => key.startsWith('strIngredient'));
+          var strIngredientKeys = keys.filter(key => key.startsWith('strIngredient') && meal[key]);
         
           
           var ingredientList = []
@@ -150,15 +160,14 @@ function Home() {
           // Loop over strIngredientKeys and append li elements to the ul
           strIngredientKeys.forEach(strIngredientKey => {
             var mealIngredient = meal[strIngredientKey];
-            
             ingredientList.push(mealIngredient)
-           
           });
+
           rowOneDishThreeIngredients = (ingredientList);
           setrowOneDishThreeIngredients(rowOneDishThreeIngredients)
           console.log(rowOneDishThreeIngredients);
         } else {
-          console.error('No meal data available in res.data.meals[0]');
+          console.error('No meal data available in res.data.meals[2]');
         }
 
 
@@ -169,17 +178,14 @@ function Home() {
           var keys = Object.keys(meal);
         
           // Filter keys that start with "strIngredient"
-          var strIngredientKeys = keys.filter(key => key.startsWith('strIngredient'));
-        
+          var strIngredientKeys = keys.filter(key => key.startsWith('strIngredient') && meal[key]);
           
           var ingredientList = []
         
           // Loop over strIngredientKeys and append li elements to the ul
           strIngredientKeys.forEach(strIngredientKey => {
             var mealIngredient = meal[strIngredientKey];
-            
             ingredientList.push(mealIngredient)
-           
           });
           rowOneDishFourIngredients = (ingredientList);
           setrowOneDishFourIngredients(rowOneDishFourIngredients)
@@ -218,16 +224,16 @@ Axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=Dessert`)
     // console.log(res.data.meals);
     let dessertMeals;
     dessertMeals = res.data.meals;
-    // console.log(dessertMeals);
+    console.log(dessertMeals);
 
     // Update rowTwoDishOneName
     setrowTwoDishOneName(res.data.meals[4].strMeal)
-    setrowTwoDishTwoName(res.data.meals[6].strMeal)
+    setrowTwoDishTwoName(res.data.meals[36].strMeal)
     setrowTwoDishThreeName(res.data.meals[10].strMeal)
     setrowTwoDishFourName(res.data.meals[20].strMeal)
     // Update rowTwoDishOneImage
     setrowTwoDishOneImage(res.data.meals[4].strMealThumb);
-    setrowTwoDishTwoImage(res.data.meals[6].strMealThumb);
+    setrowTwoDishTwoImage(res.data.meals[36].strMealThumb);
     setrowTwoDishThreeImage(res.data.meals[10].strMealThumb);
     setrowTwoDishFourImage(res.data.meals[20].strMealThumb);
   })
@@ -264,6 +270,7 @@ Axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=Banana%20Pancake
     // console.log(ingredientList);
     // You can set it to your state or use it wherever you need
     setrowTwoDishOneIngredients(ingredientList);
+    setrowTwoDishOneInstructions(directions);
     
   } else {
     console.error('No meal data available in res.data.meals');
@@ -275,32 +282,42 @@ Axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=Banana%20Pancake
 
 //========================
 // Dessert Two Ingredients
-// Axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=Banana%20Pancakes`)
-// .then((res) => {
-//   if (res.data.meals && res.data.meals.length > 0) {
-//     var meal = res.data.meals[0]; // Access the first meal object
-//     var ingredientList = [];
+Axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=New%20York%20cheesecake`)
+.then((res) => {
+  if (res.data.meals && res.data.meals.length > 0) {
+    var meal = res.data.meals[0]; // Access the first meal object
+    var ingredientList = [];
+    var directions = [];
 
-//     // Iterate over all keys in the meal object
-//     for (const key in meal) {
-//       // Check if the key starts with "strIngredient" and if the value is not null or empty
-//       if (key.startsWith('strIngredient') && meal[key] && meal[key].trim() !== '') {
-//         ingredientList.push(meal[key]); // Add the ingredient to the list
-//       }
-//     }
+    // Iterate over all keys in the meal object
+    for (const key in meal) {
+      // Check if the key starts with "strIngredient" and if the value is not null or empty
+      if (key.startsWith('strIngredient') && meal[key] && meal[key].trim() !== '') {
+        ingredientList.push(meal[key]); // Add the ingredient to the list
+      }
+    }
+    // Get Instructions
+    for (const keytwo in meal) {
+      // Check if the key starts with "strIngredient" and if the value is not null or empty
+      if (keytwo.startsWith('strInstructions') && meal[keytwo] && meal[keytwo].trim() !== '') {
+        directions.push(meal[keytwo]); // Add the ingredient to the list
+        // console.log(directions);
+      }
+    }
 
-//     // Now ingredientList contains all ingredients
-//     console.log(ingredientList);
-//     // You can set it to your state or use it wherever you need
-//     setrowTwoDishOneIngredients(ingredientList);
+    // Now ingredientList contains all ingredients
+    // console.log(ingredientList);
+    // You can set it to your state or use it wherever you need
+    setrowTwoDishTwoIngredients(ingredientList);
+    setrowTwoDishTwoInstructions(directions);
     
-//   } else {
-//     console.error('No meal data available in res.data.meals');
-//   }
-// })
-// .catch((error) => {
-//   console.error('Error fetching meal data:', error);
-// });
+  } else {
+    console.error('No meal data available in res.data.meals');
+  }
+})
+.catch((error) => {
+  console.error('Error fetching meal data:', error);
+});
 
 
 
@@ -332,6 +349,7 @@ Axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=Canadian%20Butte
     // console.log(ingredientList);
     // You can set it to your state or use it wherever you need
     setrowTwoDishThreeIngredients(ingredientList);
+    setrowTwoDishThreeInstructions(directions);
     
   } else {
     console.error('No meal data available in res.data.meals');
@@ -370,6 +388,7 @@ Axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=Chocolate%20Souf
     // console.log(ingredientList);
     // You can set it to your state or use it wherever you need
     setrowTwoDishFourIngredients(ingredientList);
+    setrowTwoDishFourInstructions(directions);
     
   } else {
     console.error('No meal data available in res.data.meals');
@@ -444,6 +463,7 @@ Axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=Salmon%20Avocado
     // console.log(ingredientList);
     // You can set it to your state or use it wherever you need
     setrowThreeDishOneIngredients(ingredientList);
+    setrowThreeDishOneInstructions(directions);
     
   } else {
     console.error('No meal data available in res.data.meals');
@@ -482,6 +502,7 @@ Axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=Sushi`)
     // console.log(ingredientList);
     // You can set it to your state or use it wherever you need
     setrowThreeDishTwoIngredients(ingredientList);
+    setrowThreeDishTwoInstructions(directions);
     
   } else {
     console.error('No meal data available in res.data.meals');
@@ -520,6 +541,7 @@ Axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=Tuna%20and%20Egg
     // console.log(ingredientList);
     // You can set it to your state or use it wherever you need
     setrowThreeDishThreeIngredients(ingredientList);
+    setrowThreeDishThreeInstructions(directions);
     
   } else {
     console.error('No meal data available in res.data.meals');
@@ -558,6 +580,7 @@ Axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=Spring%20onion%2
     // console.log(ingredientList);
     // You can set it to your state or use it wherever you need
     setrowThreeDishFourIngredients(ingredientList);
+    setrowThreeDishFourInstructions(directions);
     
   } else {
     console.error('No meal data available in res.data.meals');
@@ -673,6 +696,15 @@ Axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=Spring%20onion%2
                   )
                 })}
               </ul>
+
+              <ol>
+              {rowTwoDishOneInstructions?.map((item)=> {
+                  return(
+                    <li>{item}</li>
+                  )
+                  })}
+                  </ol>
+
             </div>
           </div>
           {/* card 2 */}
@@ -681,6 +713,22 @@ Axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=Spring%20onion%2
             <div className="container">
               <h4><b>{rowTwoDishTwoName}</b></h4>
               <p>Ingredients:</p>
+              <ul>
+              {rowTwoDishTwoIngredients?.map((item)=> {
+                  return(
+                    <li>{item}</li>
+                  )
+                })}
+              </ul>
+
+              <ol>
+              {rowTwoDishTwoInstructions?.map((item)=> {
+                  return(
+                    <li>{item}</li>
+                  )
+                  })}
+                  </ol>
+
             </div>
           </div>
         {/* card 3 */}
@@ -696,6 +744,15 @@ Axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=Spring%20onion%2
                   )
                 })}
               </ul>
+
+              <ol>
+              {rowTwoDishThreeInstructions?.map((item)=> {
+                  return(
+                    <li>{item}</li>
+                  )
+                  })}
+                  </ol>
+
             </div>
           </div>
         {/* card 4 */}
@@ -711,6 +768,15 @@ Axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=Spring%20onion%2
                   )
                 })}
               </ul>
+
+              <ol>
+              {rowTwoDishFourInstructions?.map((item)=> {
+                  return(
+                    <li>{item}</li>
+                  )
+                  })}
+                  </ol>
+
             </div>
           </div>
 
@@ -730,6 +796,15 @@ Axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=Spring%20onion%2
                   )
                 })}
               </ul>
+
+              <ol>
+              {rowThreeDishOneInstructions?.map((item)=> {
+                  return(
+                    <li>{item}</li>
+                  )
+                  })}
+                  </ol>
+
             </div>
           </div>
           {/* card 2 */}
@@ -745,6 +820,15 @@ Axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=Spring%20onion%2
                   )
                 })}
               </ul>
+
+              <ol>
+              {rowThreeDishTwoInstructions?.map((item)=> {
+                  return(
+                    <li>{item}</li>
+                  )
+                  })}
+                  </ol>
+
             </div>
           </div>
         {/* card 3 */}
@@ -760,6 +844,15 @@ Axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=Spring%20onion%2
                   )
                 })}
               </ul>
+
+              <ol>
+              {rowThreeDishThreeInstructions?.map((item)=> {
+                  return(
+                    <li>{item}</li>
+                  )
+                  })}
+                  </ol>
+
             </div>
           </div>
         {/* card 4 */}
@@ -775,6 +868,15 @@ Axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=Spring%20onion%2
                   )
                 })}
               </ul>
+
+              <ol>
+              {rowThreeDishFourInstructions?.map((item)=> {
+                  return(
+                    <li>{item}</li>
+                  )
+                  })}
+                  </ol>
+
             </div>
           </div>
 
