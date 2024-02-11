@@ -61,7 +61,9 @@ const AllRecipesPage = () => {
     <div>
       <Header />
       <div>
-        <h1> My Recipes</h1>
+      <a href="/home" >Home</a>
+      <a href="/profile" >Profile</a>
+        <h1> All Recipes</h1>
         {recipes.map((recipe) => (
           <div key={recipe.id} className="recipe-div">
             <strong className="strong">User:</strong> {recipe?.User?.username}

@@ -50,6 +50,9 @@ function Header() {
             <a href="/signup" >
               Sign up
             </a>
+            <a href="/recipes" >
+              Recipes
+            </a>
             <a href="/login">
               Login
             </a>
