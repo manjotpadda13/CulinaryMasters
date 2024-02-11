@@ -1,0 +1,54 @@
+
+/* Header.css */
+
+/* .profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} */
+
+.header{
+  padding-right:350px;
+  
+}
+
+.logo-pic{
+  width: 120px;
+  margin-top: -20px;
+  
+}
+
+
+
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  margin-bottom: 30px;
+  background-image: url(https://media.istockphoto.com/id/475511846/vector/kitchen-seamless-pattern-vector-background.jpg?s=612x612&w=0&k=20&c=inpW5Mc2MFyuc7PsMXVY49OUBU39EXekcCNe8xVeI_k=);
+  
+}
+
+.right-buttons {
+  display: inline-block;
+  gap: 10px;
+}
+
+
+a{
+  color: rgb(33, 85, 50);
+  font-size: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding:4px;
+  font-size:18px;
+  
+
+}
+
+a:hover {
+  color: #497C4F;
+}
+
+
+

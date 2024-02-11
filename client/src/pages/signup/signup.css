@@ -1,0 +1,48 @@
+h1{
+    color:rgb(11, 19, 13);
+ 
+}
+.signup-label{
+    margin-bottom: 10px;
+    color: rgb(17, 11, 9);
+    background-color: rgb(232, 240, 236);
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.signup-button{
+    color: rgb(33, 85, 50);
+    font-size: 15px;
+    margin-top: 20px;
+    margin-bottom: 200px;
+    margin-left: 20px;
+}
+
+.main-page{
+    background-color: rgb(33, 85, 50);
+    color: white;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-left: 1020px;
+}
+#signup-email.signup-input{
+    margin-bottom: 10px;
+    margin-left: 45px;
+    margin-top: 30px;
+    
+}
+#signup-name.signup-input{
+    margin-bottom: 10px;
+    margin-left: 45px;
+}
+
+#signup-password.signup-input{
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+h5{
+    font-size: 30px;
+  
+    
+}

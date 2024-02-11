@@ -1,0 +1,44 @@
+.login-button{
+    color: rgb(33, 85, 50);
+    font-size: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+
+}
+
+.sign-up{
+    color: rgb(33, 85, 50);
+    font-size: 15px;
+    margin-top: 20px;
+    margin-bottom: 300px;
+    margin-left: 700px;
+}
+
+.login-label{
+    margin-bottom: 10px;
+    color: rgb(17, 11, 9);
+    background-color: rgb(232, 240, 236);
+    font-size: 20px;
+    margin-left: 20px;
+   
+}
+#login-password.login-input{
+    margin-left: 10px;
+
+   
+    
+}
+
+#login-email.login-input{
+    margin-left: 10px;
+  padding-top: 20px;
+    padding-left: 40px;
+}
+
+
+h3{
+    color: white;
+    font-size: 30px;
+  }
+

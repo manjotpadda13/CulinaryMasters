@@ -1,8 +1,26 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Culinary Masters
+![License: MIT](https://img.shields.io/badge/License-MIT-lightblue.svg)
+## Description
+    this web app lets user find new recipes and lets the user create a new recipe.
+## Installation
+    To install make sure to run npm i to install all the dependacies.
+## Instructions
+    When you run the server you will be brought to the landing page, create and account or login. You will be taken to the profile where you can publish a recipe
+    or search recipes on the homepage. 
+## Usage
+    used to find new recipes.
+## Screenshot
+    ![Culinary-Masters](./images/culinarymasters.png)
+## Test
+    N/A
+## Credits
+    N/A
+## License
+![License: MIT](https://img.shields.io/badge/License-MIT-lightblue.svg)
+## How to Contribute
+    N/A
+## Features
+    Add, edit and delete recipes. Search recipes
+## Questions
+https://github.com/manjotpadda13/CulinaryMasters
+n/a
