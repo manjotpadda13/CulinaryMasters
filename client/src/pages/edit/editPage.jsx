@@ -2,6 +2,10 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import Header from "../../components/header";
+import Footer from "../../components/footer";
+import './editPage.css';
+
 
 const EditRecipePage = ({ match }) => {
   const { id } = useParams();
@@ -56,20 +60,26 @@ const EditRecipePage = ({ match }) => {
   };
 
   return (
+
+
     <div>
-      <h2>Edit Recipe</h2>
-      <label>Title:</label>
+          <Header />
+
+      <h6>Edit Recipe</h6>
+      <label className="title">Title:</label>
       <input
         type="text"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
       <br />
-      <label>Content:</label>
+      <label className="content">Content:</label>
       <textarea value={content} onChange={(e) => setContent(e.target.value)} />
       <br />
-      <button onClick={handleUpdate}>Submit</button>
+      <button className="onclick" onClick={handleUpdate}>Submit</button>
+      <Footer />
     </div>
+    
   );
 };
 
