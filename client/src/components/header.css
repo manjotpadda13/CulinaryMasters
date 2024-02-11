@@ -13,7 +13,8 @@
 }
 
 .logo-pic{
-  width: 110px;
+  width: 120px;
+  margin-top: -20px;
   
 }
 
@@ -24,6 +25,7 @@
   justify-content: space-between;
   /* align-items: center; */
   margin-bottom: 30px;
+  background-image: url(https://media.istockphoto.com/id/475511846/vector/kitchen-seamless-pattern-vector-background.jpg?s=612x612&w=0&k=20&c=inpW5Mc2MFyuc7PsMXVY49OUBU39EXekcCNe8xVeI_k=);
   
 }
 
@@ -47,3 +49,6 @@ a{
 a:hover {
   color: #497C4F;
 }
+
+
+

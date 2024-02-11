@@ -1,0 +1,48 @@
+.edit-btn{
+    margin-left: 900px;
+    margin-bottom: px;
+
+}
+
+.del-btn{
+    margin-bottom: 24px;
+
+}
+
+
+.title{
+    margin-bottom: 10px;
+    color: rgb(17, 11, 9);
+    background-color: rgb(232, 240, 236);
+    font-size: 20px;
+    
+   
+}
+
+.content{
+    margin-bottom: 10px;
+    color: rgb(17, 11, 9);
+    background-color: rgb(232, 240, 236);
+    font-size: 20px;
+    margin-left: 20px;
+   
+}
+input{
+    margin-left: 20px;
+    font-size: 15px;
+    margin-bottom: 30px;
+    
+}
+
+textarea{
+
+    margin-left: 20px;
+    margin-right: 50px;
+}
+.onclick{
+    color: rgb(33, 85, 50);
+    font-size: 15px;
+    margin-top: 20px;
+    margin-bottom: 200px;
+    margin-left: 20px;
+}
